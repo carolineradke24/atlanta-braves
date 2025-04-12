@@ -44,6 +44,17 @@
 .player-cutout.active {
   opacity: 1;
 }
+.braves-logo-wrapper {
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.braves-logo {
+  height: 200px;  /* adjust based on proportion you want */
+  width: auto;
+}
   </style>
 </head>
 <body class="bg-light">
@@ -71,10 +82,10 @@
 
   <!-- Hero Banner -->
   <header class="hero-banner position-relative">
-    <div class="player-banner-content position-absolute bottom-0 start-0 p-4 text-white text-center">
-        <img src="images/WeAreBravesCountry.svg" class="braves-logo mb-2" alt="Braves Logo">
-        <p class="lead mb-0">Welcome to your ultimate Atlanta Braves fan destination.</p>
+    <div class="braves-logo-wrapper position-absolute bottom-0 start-0 p-4">
+        <img src="images/braves.svg" class="braves-logo" alt="Braves Logo">
       </div>
+      
   
    <div class="player-rotation-wrapper">
         <div class="player-rotation">
