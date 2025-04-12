@@ -16,16 +16,17 @@
       background: url('images/truist.png') center center/cover no-repeat;
       height: 700px; width: 2050px;
     }
-    .hero-banner {
+.hero-banner {
   background: url('images/truist.png') center center/cover no-repeat;
   height: 700px; width: 2050px;
   position: relative;
+  overflow: hidden;
 }
 
-.hero-banner .player-cutout {
-  max-height: 400px;
+.player-cutout {
+  height: 100%;
+  max-height: 700px;
   width: auto;
-  position: relative;
   z-index: 2;
 }
   </style>
@@ -54,15 +55,33 @@
   </nav>
 
   <!-- Hero Banner -->
-  <header class="hero-banner d-flex align-items-center">
-    <div class="container px-5">
-      <div class="row align-items-center">
-        <div class="col-md-6 text-white text-center text-md-start">
+  <header class="hero-banner position-relative">
+    <div class="container position-relative z-2 text-white">
+      <div class="row align-items-center h-100">
+        <div class="col-md-6 text-center text-md-start">
           <h1 class="display-4 fw-bold">For The A</h1>
           <p class="lead">Welcome to your ultimate Atlanta Braves fan destination.</p>
         </div>
-        <div class="col-md-6 text-center mt-4 mt-md-0">
-          <img src="images/ozuna.png" class="img-fluid player-cutout" alt="Braves Player">
+      </div>
+    </div>
+  
+    <!-- Player Carousel (cutouts on right side) -->
+    <div id="playerCarousel" class="carousel slide position-absolute bottom-0 end-0" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/ozuna.png" class="player-cutout d-block" alt="Ozuna">
+        </div>
+        <div class="carousel-item">
+          <img src="images/acuna.png" class="player-cutout d-block" alt="Acuna Jr.">
+        </div>
+        <div class="carousel-item">
+          <img src="images/riley.png" class="player-cutout d-block" alt="Austin Riley">
+        </div>
+        <div class="carousel-item">
+            <img src="images/olson.png" class="player-cutout d-block" alt="Matt Olson">
+        </div>
+        <div class="carousel-item">
+            <img src="images/strider.png" class="player-cutout d-block" alt="Strider">
         </div>
       </div>
     </div>
