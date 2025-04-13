@@ -60,6 +60,17 @@ body {
 .footer .social-icons a:hover {
   color: #CE1141 !important;
 }
+.nav-pills .nav-link {
+  color: #13274F;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #CE1141; /* Braves red */
+  color: white;
+}
+
 
   </style>
 </head>
@@ -87,6 +98,83 @@ body {
       </div>
     </div>
   </nav>
+
+  <section class="container py-5">
+    <h2 class="text-center fw-bold mb-4">Meet the Atlanta Braves</h2>
+  
+    <!-- Nav Tabs -->
+    <ul class="nav nav-pills justify-content-center mb-4" id="rosterTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="active-tab" data-bs-toggle="pill" data-bs-target="#active" type="button" role="tab">
+          Active Roster
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="injured-tab" data-bs-toggle="pill" data-bs-target="#injured" type="button" role="tab">
+          Injury List
+        </button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="coaches-tab" data-bs-toggle="pill" data-bs-target="#coaches" type="button" role="tab">
+          Coaches
+        </button>
+      </li>
+    </ul>
+  
+    <!-- Tab Content -->
+    <div class="tab-content" id="rosterTabsContent">
+      <!-- Active Roster -->
+      <section class="container py-5">
+        <h3 class="bg-light px-3 py-2 fw-bold border-start border-4 border-danger text-dark mb-4">Pitchers</h3>
+      
+        <div class="row align-items-center mb-4">
+          <div class="col-auto">
+            <img src="images/enyel.jpg" alt="Enyel" class="rounded-circle" style="width: 70px; height: 70px;">
+          </div>
+          <div class="col">
+            <h5 class="mb-1 fw-bold">Enyel De Los Santos <span class="text-muted">#61</span></h5>
+            <small class="text-muted">Position: P • B/T: R/R • Ht: 6'3" • Wt: 235 • DOB: 12/25/1995</small>
+          </div>
+        </div>
+      
+        <div class="row align-items-center mb-4">
+          <div class="col-auto">
+            <img src="images/bryce.jpg" alt="Bryce" class="rounded-circle" style="width: 70px; height: 70px;">
+          </div>
+          <div class="col">
+            <h5 class="mb-1 fw-bold">Bryce Elder <span class="text-muted">#55</span></h5>
+            <small class="text-muted">Position: P • B/T: R/R • Ht: 6'2" • Wt: 220 • DOB: 05/19/1999</small>
+          </div>
+        </div>
+      
+        <!-- Add more players similarly -->
+      
+      </section>
+      
+  
+      <!-- Injury List -->
+      <div class="tab-pane fade" id="injured" role="tabpanel">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Ozzie Albies – 2B – #1 (15-day IL)</li>
+          <li class="list-group-item">Kyle Wright – SP – #30 (60-day IL)</li>
+          <!-- Add more -->
+        </ul>
+      </div>
+  
+      <!-- Coaches -->
+      <div class="tab-pane fade" id="coaches" role="tabpanel">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Brian Snitker – Manager</li>
+          <li class="list-group-item">Ron Washington – Third Base Coach</li>
+          <li class="list-group-item">Kevin Seitzer – Hitting Coach</li>
+          <!-- Add more -->
+        </ul>
+      </div>
+    </div>
+  </section>
+  
+
+
 
   
   <!-- Footer -->
@@ -116,6 +204,7 @@ body {
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
