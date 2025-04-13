@@ -77,6 +77,41 @@ body {
   border-radius: 50%;
   border: 2px solid #13274F; /* optional navy ring */
 }
+.player-name:hover {
+  color: #CE1141;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.bummer-modal-bg {
+  background: url('images/bummer-action.jpeg') center center/cover no-repeat;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6); /* darker overlay */
+  z-index: 1;
+}
+
+.player-headshot-lg {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  z-index: 2;
+}
+
+.modal-content {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
 
 
   </style>
@@ -152,9 +187,11 @@ body {
       <div class="col-md-4 d-flex align-items-center">
         <img src="images/bummer.png" class="player-headshot me-3" alt="Aaron">
         <div>
-          <h5 class="fw-bold">Aaron Bummer <span class="text-muted">#49</span></h5>
+            <h5 class="fw-bold mb-0 player-name" data-bs-toggle="modal" data-bs-target="#modal-bummer" style="cursor:pointer;">
+                Aaron Bummer <span class="text-muted">#49</span>
+              </h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: RP<br>
             B/T: L/L<br>
             Ht: 6'3"<br>
             Wt: 215<br>
@@ -162,11 +199,46 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">RP</div>
       <div class="col d-none d-md-block text-muted text-center">L/L</div>
       <div class="col d-none d-md-block text-muted text-center">6'3"</div>
       <div class="col d-none d-md-block text-muted text-center">215</div>
       <div class="col d-none d-md-block text-muted text-center">09/21/1993</div>
+    </div>
+  </div>
+
+  <!-- Modal: Aaron Bummer -->
+<div class="modal fade" id="modal-bummer" tabindex="-1" aria-labelledby="modalBummerLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-0">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="modalBummerLabel">Aaron Bummer – 2025 Stats</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body p-0">
+          <div class="bummer-modal-bg position-relative text-white d-flex align-items-center">
+            <div class="bg-overlay"></div>
+  
+            <div class="row g-0 w-100 z-2">
+              <!-- Headshot -->
+              <div class="col-md-4 d-flex justify-content-center align-items-center p-4">
+                <img src="images/bummer.png" alt="Aaron Bummer" class="player-headshot-lg">
+              </div>
+  
+              <!-- Stats -->
+              <div class="col-md-8 p-4">
+                <ul class="list-unstyled fs-5 mb-0">
+                  <li><strong>Games:</strong> 5</li>
+                  <li><strong>Saves:</strong> 0</li>
+                  <li><strong>ERA:</strong> 5.40</li>
+                  <li><strong>WHIP:</strong> 1.80</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   
@@ -179,7 +251,7 @@ body {
         <div>
           <h5 class="fw-bold">Enyel De Los Santos <span class="text-muted">#61</span></h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: RP<br>
             B/T: R/R<br>
             Ht: 6'3"<br>
             Wt: 235<br>
@@ -187,7 +259,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">RP</div>
       <div class="col d-none d-md-block text-muted text-center">R/R</div>
       <div class="col d-none d-md-block text-muted text-center">6'3"</div>
       <div class="col d-none d-md-block text-muted text-center">235</div>
@@ -204,7 +276,7 @@ body {
         <div>
           <h5 class="fw-bold">Bryce Elder <span class="text-muted">#55</span></h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: SP<br>
             B/T: R/R<br>
             Ht: 6'2"<br>
             Wt: 220<br>
@@ -212,7 +284,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">SP</div>
       <div class="col d-none d-md-block text-muted text-center">R/R</div>
       <div class="col d-none d-md-block text-muted text-center">6'2"</div>
       <div class="col d-none d-md-block text-muted text-center">220</div>
@@ -229,7 +301,7 @@ body {
         <div>
           <h5 class="fw-bold">Daysbel Hernández <span class="text-muted">#62</span></h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: RP<br>
             B/T: R/R<br>
             Ht: 5'10"<br>
             Wt: 220<br>
@@ -237,7 +309,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">RP</div>
       <div class="col d-none d-md-block text-muted text-center">R/R</div>
       <div class="col d-none d-md-block text-muted text-center">5'10"</div>
       <div class="col d-none d-md-block text-muted text-center">220</div>
@@ -254,7 +326,7 @@ body {
         <div>
           <h5 class="fw-bold">Grant Holmes <span class="text-muted">#66</span></h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: SP<br>
             B/T: L/R<br>
             Ht: 6'0"<br>
             Wt: 226<br>
@@ -262,7 +334,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">SP</div>
       <div class="col d-none d-md-block text-muted text-center">L/R</div>
       <div class="col d-none d-md-block text-muted text-center">6'0"</div>
       <div class="col d-none d-md-block text-muted text-center">226</div>
@@ -279,7 +351,7 @@ body {
         <div>
           <h5 class="fw-bold">Raisel Iglesias <span class="text-muted">#26</span></h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: RP<br>
             B/T: R/R<br>
             Ht: 6'2"<br>
             Wt: 190<br>
@@ -287,7 +359,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">RP</div>
       <div class="col d-none d-md-block text-muted text-center">R/R</div>
       <div class="col d-none d-md-block text-muted text-center">6'2"</div>
       <div class="col d-none d-md-block text-muted text-center">190</div>
@@ -304,7 +376,7 @@ body {
         <div>
           <h5 class="fw-bold">Pierce Johnson <span class="text-muted">#38</span></h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: RP<br>
             B/T: R/R<br>
             Ht: 6'2"<br>
             Wt: 202<br>
@@ -312,7 +384,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">RP</div>
       <div class="col d-none d-md-block text-muted text-center">R/R</div>
       <div class="col d-none d-md-block text-muted text-center">6'2"</div>
       <div class="col d-none d-md-block text-muted text-center">202</div>
@@ -329,7 +401,7 @@ body {
         <div>
           <h5 class="fw-bold">Dylan Lee <span class="text-muted">#52</span></h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: RP<br>
             B/T: L/L<br>
             Ht: 6'3"<br>
             Wt: 214<br>
@@ -337,7 +409,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">RP</div>
       <div class="col d-none d-md-block text-muted text-center">L/L</div>
       <div class="col d-none d-md-block text-muted text-center">6'3"</div>
       <div class="col d-none d-md-block text-muted text-center">214</div>
@@ -354,7 +426,7 @@ body {
         <div>
           <h5 class="fw-bold">Rafael Montero <span class="text-muted">#48</span></h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: RP<br>
             B/T: R/R<br>
             Ht: 6'0"<br>
             Wt: 193<br>
@@ -362,7 +434,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">RP</div>
       <div class="col d-none d-md-block text-muted text-center">R/R</div>
       <div class="col d-none d-md-block text-muted text-center">6'0"</div>
       <div class="col d-none d-md-block text-muted text-center">193</div>
@@ -379,7 +451,7 @@ body {
         <div>
           <h5 class="fw-bold">Michael Petersen <span class="text-muted">#70</span></h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: RP<br>
             B/T: R/R<br>
             Ht: 6'7"<br>
             Wt: 195<br>
@@ -387,7 +459,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">RP</div>
       <div class="col d-none d-md-block text-muted text-center">R/R</div>
       <div class="col d-none d-md-block text-muted text-center">6'7"</div>
       <div class="col d-none d-md-block text-muted text-center">195</div>
@@ -404,7 +476,7 @@ body {
         <div>
           <h5 class="fw-bold">Chris Sale <span class="text-muted">#51</span></h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: SP<br>
             B/T: L/L<br>
             Ht: 6'6"<br>
             Wt: 180<br>
@@ -412,7 +484,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">SP</div>
       <div class="col d-none d-md-block text-muted text-center">L/L</div>
       <div class="col d-none d-md-block text-muted text-center">6'6"</div>
       <div class="col d-none d-md-block text-muted text-center">180</div>
@@ -429,7 +501,7 @@ body {
         <div>
           <h5 class="fw-bold">Spencer Schwellenbach <span class="text-muted">#56</span></h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: SP<br>
             B/T: R/R<br>
             Ht: 6'1"<br>
             Wt: 200<br>
@@ -437,7 +509,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">SP</div>
       <div class="col d-none d-md-block text-muted text-center">R/R</div>
       <div class="col d-none d-md-block text-muted text-center">6'1"</div>
       <div class="col d-none d-md-block text-muted text-center">200</div>
@@ -454,7 +526,7 @@ body {
         <div>
           <h5 class="fw-bold">Spencer Strider <span class="text-muted">#99</span></h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: SP<br>
             B/T: R/R<br>
             Ht: 6'0"<br>
             Wt: 195<br>
@@ -462,7 +534,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">SP</div>
       <div class="col d-none d-md-block text-muted text-center">R/R</div>
       <div class="col d-none d-md-block text-muted text-center">6'0"</div>
       <div class="col d-none d-md-block text-muted text-center">195</div>
@@ -479,7 +551,7 @@ body {
         <div>
           <h5 class="fw-bold">José Suarez <span class="text-muted">#54</span></h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: RP<br>
             B/T: L/L<br>
             Ht: 5'10"<br>
             Wt: 225<br>
@@ -487,7 +559,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">RP</div>
       <div class="col d-none d-md-block text-muted text-center">L/L</div>
       <div class="col d-none d-md-block text-muted text-center">5'10"</div>
       <div class="col d-none d-md-block text-muted text-center">225</div>
@@ -504,7 +576,7 @@ body {
         <div>
           <h5 class="fw-bold">Zach Thompson <span class="text-muted">#73</span></h5>
           <div class="d-md-none small text-muted mt-1">
-            Position: P<br>
+            Position: RP<br>
             B/T: R/R<br>
             Ht: 6'7"<br>
             Wt: 250<br>
@@ -512,7 +584,7 @@ body {
           </div>
         </div>
       </div>
-      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">RP</div>
       <div class="col d-none d-md-block text-muted text-center">R/R</div>
       <div class="col d-none d-md-block text-muted text-center">6'7"</div>
       <div class="col d-none d-md-block text-muted text-center">250</div>
@@ -744,7 +816,7 @@ body {
       <div>
         <h5 class="fw-bold">Bryan De La Cruz <span class="text-muted">#14</span></h5>
         <div class="d-md-none small text-muted mt-1">
-          Position: P<br>
+          Position: OF<br>
           B/T: R/R<br>
           Ht: 6'1"<br>
           Wt: 175<br>
@@ -752,7 +824,7 @@ body {
         </div>
       </div>
     </div>
-    <div class="col d-none d-md-block text-muted text-center">P</div>
+    <div class="col d-none d-md-block text-muted text-center">OF</div>
     <div class="col d-none d-md-block text-muted text-center">R/R</div>
     <div class="col d-none d-md-block text-muted text-center">6'1"</div>
     <div class="col d-none d-md-block text-muted text-center">175</div>
@@ -768,7 +840,7 @@ body {
       <div>
         <h5 class="fw-bold">Stuart Fairchild <span class="text-muted">#17</span></h5>
         <div class="d-md-none small text-muted mt-1">
-          Position: P<br>
+          Position: OF<br>
           B/T: R/R<br>
           Ht: 5'11"<br>
           Wt: 205<br>
@@ -776,7 +848,7 @@ body {
         </div>
       </div>
     </div>
-    <div class="col d-none d-md-block text-muted text-center">P</div>
+    <div class="col d-none d-md-block text-muted text-center">OF</div>
     <div class="col d-none d-md-block text-muted text-center">R/R</div>
     <div class="col d-none d-md-block text-muted text-center">5'11"</div>
     <div class="col d-none d-md-block text-muted text-center">205</div>
@@ -792,7 +864,7 @@ body {
       <div>
         <h5 class="fw-bold">Michael Harris II <span class="text-muted">#23</span></h5>
         <div class="d-md-none small text-muted mt-1">
-          Position: P<br>
+          Position: OF<br>
           B/T: L/L<br>
           Ht: 6'0"<br>
           Wt: 195<br>
@@ -800,7 +872,7 @@ body {
         </div>
       </div>
     </div>
-    <div class="col d-none d-md-block text-muted text-center">P</div>
+    <div class="col d-none d-md-block text-muted text-center">OF</div>
     <div class="col d-none d-md-block text-muted text-center">L/L</div>
     <div class="col d-none d-md-block text-muted text-center">6'0"</div>
     <div class="col d-none d-md-block text-muted text-center">195</div>
@@ -816,7 +888,7 @@ body {
       <div>
         <h5 class="fw-bold">Jarred Kelenic <span class="text-muted">#24</span></h5>
         <div class="d-md-none small text-muted mt-1">
-          Position: P<br>
+          Position: OF<br>
           B/T: L/L<br>
           Ht: 5'11"<br>
           Wt: 206<br>
@@ -824,7 +896,7 @@ body {
         </div>
       </div>
     </div>
-    <div class="col d-none d-md-block text-muted text-center">P</div>
+    <div class="col d-none d-md-block text-muted text-center">OF</div>
     <div class="col d-none d-md-block text-muted text-center">L/L</div>
     <div class="col d-none d-md-block text-muted text-center">5'11"</div>
     <div class="col d-none d-md-block text-muted text-center">206</div>
@@ -840,7 +912,7 @@ body {
       <div>
         <h5 class="fw-bold">Eli White <span class="text-muted">#36</span></h5>
         <div class="d-md-none small text-muted mt-1">
-          Position: P<br>
+          Position: OF<br>
           B/T: R/R<br>
           Ht: 6'3"<br>
           Wt: 195<br>
@@ -848,7 +920,7 @@ body {
         </div>
       </div>
     </div>
-    <div class="col d-none d-md-block text-muted text-center">P</div>
+    <div class="col d-none d-md-block text-muted text-center">OF</div>
     <div class="col d-none d-md-block text-muted text-center">R/R</div>
     <div class="col d-none d-md-block text-muted text-center">6'3"</div>
     <div class="col d-none d-md-block text-muted text-center">195</div>
@@ -887,7 +959,7 @@ body {
         </div>
       </div>
     </div>
-    <div class="col d-none d-md-block text-muted text-center">P</div>
+    <div class="col d-none d-md-block text-muted text-center">DH</div>
     <div class="col d-none d-md-block text-muted text-center">R/R</div>
     <div class="col d-none d-md-block text-muted text-center">6'1"</div>
     <div class="col d-none d-md-block text-muted text-center">225</div>
@@ -958,6 +1030,7 @@ body {
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
 
 </body>
 </html>
