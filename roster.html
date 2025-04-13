@@ -83,23 +83,6 @@ body {
   cursor: pointer;
 }
 
-.bummer-modal-bg {
-  background: url('images/bummer-action.jpeg') center center/cover no-repeat;
-  height: 350px;
-  position: relative;
-  overflow: hidden;
-}
-
-.bg-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.6); /* darker overlay */
-  z-index: 1;
-}
-
 .player-headshot-lg {
   width: 150px;
   height: auto;
@@ -108,12 +91,90 @@ body {
   z-index: 2;
 }
 
-.modal-content {
-  border-radius: 0.5rem;
-  overflow: hidden;
+.bg-navy {
+  background-color: #13274F;
+  color: white;
+}
+.bg-red {
+  background-color: #CE1141;
+  color: white;
 }
 
+.modal-content {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.modal-body {
+  height: 300px; /* or whatever height you want */
+  position: relative;
+  padding: 0;
+}
+.modal-header .player-headshot {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+}
 
+.modal-bg-image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Overlayed stat content */
+.modal-overlay {
+  position: absolute; /* CHANGE from relative to absolute */
+  top: 0;
+  right: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+}
+.modal-header {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.modal-overlay .text-white {
+  position: relative;
+  z-index: 4; /* Ensure text is on top */
+}
+.modal-bg-image::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay */
+  z-index: 2;
+}
+.modal-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45); /* dark overlay */
+  z-index: 1;
+}
+.modal-bg-image {
+  position: relative;
+}
+@media (max-width: 576px) {
+  .modal-body {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .modal-body img {
+    max-height: 250px;
+  }
+
+  .modal-body .bg-navy {
+    padding: 1rem;
+  }
+}
   </style>
 </head>
 <body class="bg-light">
@@ -187,9 +248,11 @@ body {
       <div class="col-md-4 d-flex align-items-center">
         <img src="images/bummer.png" class="player-headshot me-3" alt="Aaron">
         <div>
-            <h5 class="fw-bold mb-0 player-name" data-bs-toggle="modal" data-bs-target="#modal-bummer" style="cursor:pointer;">
-                Aaron Bummer <span class="text-muted">#49</span>
-              </h5>
+            <h5 class="fw-bold mb-0 player-name">
+                <a href="#" class="text-dark text-decoration-none" data-bs-toggle="modal" data-bs-target="#statsModal">
+                  Aaron Bummer <span class="text-muted">#49</span>
+                </a>
+              </h5>              
           <div class="d-md-none small text-muted mt-1">
             Position: RP<br>
             B/T: L/L<br>
@@ -207,33 +270,27 @@ body {
     </div>
   </div>
 
-  <!-- Modal: Aaron Bummer -->
-<div class="modal fade" id="modal-bummer" tabindex="-1" aria-labelledby="modalBummerLabel" aria-hidden="true">
+  <!-- Modal -->
+<div class="modal fade" id="statsModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content p-0">
-        <div class="modal-header border-0">
-          <h5 class="modal-title" id="modalBummerLabel">Aaron Bummer – 2025 Stats</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="modal-content overflow-hidden">
+        <div class="modal-header bg-red text-white align-items-center">
+          <img src="images/bummer.png" class="player-headshot me-2" alt="Aaron Bummer">
+          <h5 class="modal-title fw-bold mb-0">Aaron Bummer – 2025 Stats</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
-  
         <div class="modal-body p-0">
-          <div class="bummer-modal-bg position-relative text-white d-flex align-items-center">
-            <div class="bg-overlay"></div>
-  
-            <div class="row g-0 w-100 z-2">
-              <!-- Headshot -->
-              <div class="col-md-4 d-flex justify-content-center align-items-center p-4">
-                <img src="images/bummer.png" alt="Aaron Bummer" class="player-headshot-lg">
-              </div>
-  
-              <!-- Stats -->
-              <div class="col-md-8 p-4">
-                <ul class="list-unstyled fs-5 mb-0">
-                  <li><strong>Games:</strong> 5</li>
-                  <li><strong>Saves:</strong> 0</li>
-                  <li><strong>ERA:</strong> 5.40</li>
-                  <li><strong>WHIP:</strong> 1.80</li>
-                </ul>
+          <div class="row g-0">
+            <div class="col-md-8 position-relative">
+              <img src="images/bummer-action.jpeg" alt="Action Shot" class="img-fluid h-100 w-100 object-fit-cover">
+              <div class="bg-overlay"></div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center align-items-center bg-navy text-white">
+              <div class="text-center p-4">
+                <p class="mb-2 fs-5"><strong>Games:</strong> 5</p>
+                <p class="mb-2 fs-5"><strong>Saves:</strong> 0</p>
+                <p class="mb-2 fs-5"><strong>ERA:</strong> 5.40</p>
+                <p class="mb-0 fs-5"><strong>WHIP:</strong> 1.80</p>
               </div>
             </div>
           </div>
@@ -241,6 +298,7 @@ body {
       </div>
     </div>
   </div>
+  
   
   
   <!-- Player: Enyel De Los Santos -->
