@@ -77,10 +77,12 @@ body {
   border-radius: 50%;
   border: 2px solid #13274F; /* optional navy ring */
 }
-.player-name:hover {
+.player-link {
+  color: black;
+  text-decoration: none;
+}
+.player-link:hover {
   color: #CE1141;
-  transition: color 0.2s ease;
-  cursor: pointer;
 }
 
 .player-headshot-lg {
@@ -249,7 +251,7 @@ body {
         <img src="images/bummer.png" class="player-headshot me-3" alt="Aaron">
         <div>
             <h5 class="fw-bold mb-0 player-name">
-                <a href="#" class="text-dark text-decoration-none" data-bs-toggle="modal" data-bs-target="#statsModal">
+                <a href="#" class="player-link" data-bs-toggle="modal" data-bs-target="#statsModal">
                   Aaron Bummer <span class="text-muted">#49</span>
                 </a>
               </h5>              
