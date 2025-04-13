@@ -75,6 +75,7 @@ body {
   height: 70px;
   object-fit: cover;
   border-radius: 50%;
+  border: 2px solid #13274F; /* optional navy ring */
 }
 
 
@@ -130,31 +131,463 @@ body {
     <!-- Tab Content -->
     <div class="tab-content" id="rosterTabsContent">
       <!-- Active Roster -->
-      <section class="container py-5">
+      <section class="container py-5">     
+        
         <h3 class="bg-light px-3 py-2 fw-bold border-start border-4 border-danger text-dark mb-4">Pitchers</h3>
-      
-        <div class="row align-items-center mb-4">
-          <div class="col-auto">
-            <img src="images/enyel.png" alt="Enyel De Los Santos" class="player-headshot">
-          </div>
-          <div class="col">
-            <h5 class="mb-1 fw-bold">Enyel De Los Santos <span class="text-muted">#61</span></h5>
-            <small class="text-muted">Position: P • B/T: R/R • Ht: 6'3" • Wt: 235 • DOB: 12/25/1995</small>
+
+        <!-- Column headers (visible only on desktop) -->
+        <div class="container mb-2 d-none d-md-flex text-muted fw-bold px-4">
+          <div class="col-md-4"> </div>
+          <div class="col text-center">Position</div>
+          <div class="col text-center">B/T</div>
+          <div class="col text-center">Height</div>
+          <div class="col text-center">Weight</div>
+          <div class="col text-center">DOB</div>
+        </div>
+
+        
+<!-- Player: Aaron Bummer -->
+<div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/bummer.png" class="player-headshot me-3" alt="Aaron">
+        <div>
+          <h5 class="fw-bold">Aaron Bummer <span class="text-muted">#49</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: L/L<br>
+            Ht: 6'3"<br>
+            Wt: 215<br>
+            DOB: 09/21/1993
           </div>
         </div>
-      
-        <div class="row align-items-center mb-4">
-          <div class="col-auto">
-            <img src="images/bryce.jpeg" alt="Bryce" class="rounded-circle" style="width: 70px; height: 70px;">
-          </div>
-          <div class="col">
-            <h5 class="mb-1 fw-bold">Bryce Elder <span class="text-muted">#55</span></h5>
-            <small class="text-muted">Position: P • B/T: R/R • Ht: 6'2" • Wt: 220 • DOB: 05/19/1999</small>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">L/L</div>
+      <div class="col d-none d-md-block text-muted text-center">6'3"</div>
+      <div class="col d-none d-md-block text-muted text-center">215</div>
+      <div class="col d-none d-md-block text-muted text-center">09/21/1993</div>
+    </div>
+  </div>
+  
+  
+  <!-- Player: Enyel De Los Santos -->
+  <div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/enyel.png" class="player-headshot me-3" alt="Enyel">
+        <div>
+          <h5 class="fw-bold">Enyel De Los Santos <span class="text-muted">#61</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: R/R<br>
+            Ht: 6'3"<br>
+            Wt: 235<br>
+            DOB: 12/25/1995
           </div>
         </div>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">R/R</div>
+      <div class="col d-none d-md-block text-muted text-center">6'3"</div>
+      <div class="col d-none d-md-block text-muted text-center">235</div>
+      <div class="col d-none d-md-block text-muted text-center">12/25/1995</div>
+    </div>
+  </div>
+  
+  
+  <!-- Player: Bryce Elder -->
+  <div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/bryce.png" class="player-headshot me-3" alt="Bryce">
+        <div>
+          <h5 class="fw-bold">Bryce Elder <span class="text-muted">#55</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: R/R<br>
+            Ht: 6'2"<br>
+            Wt: 220<br>
+            DOB: 05/19/1999
+          </div>
+        </div>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">R/R</div>
+      <div class="col d-none d-md-block text-muted text-center">6'2"</div>
+      <div class="col d-none d-md-block text-muted text-center">220</div>
+      <div class="col d-none d-md-block text-muted text-center">05/19/1999</div>
+    </div>
+  </div>
+  
+  
+  <!-- Player: Daysbel Hernández -->
+  <div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/daysbel.png" class="player-headshot me-3" alt="Daysbel">
+        <div>
+          <h5 class="fw-bold">Daysbel Hernández <span class="text-muted">#62</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: R/R<br>
+            Ht: 5'10"<br>
+            Wt: 220<br>
+            DOB: 09/15/1996
+          </div>
+        </div>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">R/R</div>
+      <div class="col d-none d-md-block text-muted text-center">5'10"</div>
+      <div class="col d-none d-md-block text-muted text-center">220</div>
+      <div class="col d-none d-md-block text-muted text-center">09/15/1996</div>
+    </div>
+  </div>
+  
+  
+  <!-- Player: Grant Holmes -->
+  <div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/grant.png" class="player-headshot me-3" alt="Grant">
+        <div>
+          <h5 class="fw-bold">Grant Holmes <span class="text-muted">#66</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: L/R<br>
+            Ht: 6'0"<br>
+            Wt: 226<br>
+            DOB: 03/22/1996
+          </div>
+        </div>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">L/R</div>
+      <div class="col d-none d-md-block text-muted text-center">6'0"</div>
+      <div class="col d-none d-md-block text-muted text-center">226</div>
+      <div class="col d-none d-md-block text-muted text-center">03/22/1996</div>
+    </div>
+  </div>
+  
+  
+  <!-- Player: Raisel Iglesias -->
+  <div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/raisel.png" class="player-headshot me-3" alt="Raisel">
+        <div>
+          <h5 class="fw-bold">Raisel Iglesias <span class="text-muted">#26</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: R/R<br>
+            Ht: 6'2"<br>
+            Wt: 190<br>
+            DOB: 01/04/1990
+          </div>
+        </div>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">R/R</div>
+      <div class="col d-none d-md-block text-muted text-center">6'2"</div>
+      <div class="col d-none d-md-block text-muted text-center">190</div>
+      <div class="col d-none d-md-block text-muted text-center">01/04/1990</div>
+    </div>
+  </div>
+  
+  
+  <!-- Player: Pierce Johnson -->
+  <div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/pierce.png" class="player-headshot me-3" alt="Pierce">
+        <div>
+          <h5 class="fw-bold">Pierce Johnson <span class="text-muted">#38</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: R/R<br>
+            Ht: 6'2"<br>
+            Wt: 202<br>
+            DOB: 05/10/1991
+          </div>
+        </div>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">R/R</div>
+      <div class="col d-none d-md-block text-muted text-center">6'2"</div>
+      <div class="col d-none d-md-block text-muted text-center">202</div>
+      <div class="col d-none d-md-block text-muted text-center">05/10/1991</div>
+    </div>
+  </div>
+  
+  
+  <!-- Player: Dylan Lee -->
+  <div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/dylan.png" class="player-headshot me-3" alt="Dylan">
+        <div>
+          <h5 class="fw-bold">Dylan Lee <span class="text-muted">#52</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: L/L<br>
+            Ht: 6'3"<br>
+            Wt: 214<br>
+            DOB: 08/01/1994
+          </div>
+        </div>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">L/L</div>
+      <div class="col d-none d-md-block text-muted text-center">6'3"</div>
+      <div class="col d-none d-md-block text-muted text-center">214</div>
+      <div class="col d-none d-md-block text-muted text-center">08/01/1994</div>
+    </div>
+  </div>
+  
+  
+  <!-- Player: Rafael Montero -->
+  <div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/rafael.png" class="player-headshot me-3" alt="Rafael">
+        <div>
+          <h5 class="fw-bold">Rafael Montero <span class="text-muted">#48</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: R/R<br>
+            Ht: 6'0"<br>
+            Wt: 193<br>
+            DOB: 10/17/1990
+          </div>
+        </div>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">R/R</div>
+      <div class="col d-none d-md-block text-muted text-center">6'0"</div>
+      <div class="col d-none d-md-block text-muted text-center">193</div>
+      <div class="col d-none d-md-block text-muted text-center">10/17/1990</div>
+    </div>
+  </div>
+  
+  
+  <!-- Player: Michael Petersen -->
+  <div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/michaelpetersen.png" class="player-headshot me-3" alt="Michael">
+        <div>
+          <h5 class="fw-bold">Michael Petersen <span class="text-muted">#70</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: R/R<br>
+            Ht: 6'7"<br>
+            Wt: 195<br>
+            DOB: 05/16/1994
+          </div>
+        </div>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">R/R</div>
+      <div class="col d-none d-md-block text-muted text-center">6'7"</div>
+      <div class="col d-none d-md-block text-muted text-center">195</div>
+      <div class="col d-none d-md-block text-muted text-center">05/16/1994</div>
+    </div>
+  </div>
+  
+  
+  <!-- Player: Chris Sale -->
+  <div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/chris.png" class="player-headshot me-3" alt="Chris">
+        <div>
+          <h5 class="fw-bold">Chris Sale <span class="text-muted">#51</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: L/L<br>
+            Ht: 6'6"<br>
+            Wt: 180<br>
+            DOB: 03/30/1989
+          </div>
+        </div>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">L/L</div>
+      <div class="col d-none d-md-block text-muted text-center">6'6"</div>
+      <div class="col d-none d-md-block text-muted text-center">180</div>
+      <div class="col d-none d-md-block text-muted text-center">03/30/1989</div>
+    </div>
+  </div>
+  
+  
+  <!-- Player: Spencer Schwellenbach -->
+  <div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/schwellenbach.png" class="player-headshot me-3" alt="Spencer">
+        <div>
+          <h5 class="fw-bold">Spencer Schwellenbach <span class="text-muted">#56</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: R/R<br>
+            Ht: 6'1"<br>
+            Wt: 200<br>
+            DOB: 05/31/2000
+          </div>
+        </div>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">R/R</div>
+      <div class="col d-none d-md-block text-muted text-center">6'1"</div>
+      <div class="col d-none d-md-block text-muted text-center">200</div>
+      <div class="col d-none d-md-block text-muted text-center">05/31/2000</div>
+    </div>
+  </div>
+  
+  
+  <!-- Player: Spencer Strider -->
+  <div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/spencerstrider.png" class="player-headshot me-3" alt="Spencer">
+        <div>
+          <h5 class="fw-bold">Spencer Strider <span class="text-muted">#99</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: R/R<br>
+            Ht: 6'0"<br>
+            Wt: 195<br>
+            DOB: 10/28/1998
+          </div>
+        </div>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">R/R</div>
+      <div class="col d-none d-md-block text-muted text-center">6'0"</div>
+      <div class="col d-none d-md-block text-muted text-center">195</div>
+      <div class="col d-none d-md-block text-muted text-center">10/28/1998</div>
+    </div>
+  </div>
+  
+  
+  <!-- Player: José Suarez -->
+  <div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/jose.png" class="player-headshot me-3" alt="José">
+        <div>
+          <h5 class="fw-bold">José Suarez <span class="text-muted">#54</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: L/L<br>
+            Ht: 5'10"<br>
+            Wt: 225<br>
+            DOB: 01/03/1998
+          </div>
+        </div>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">L/L</div>
+      <div class="col d-none d-md-block text-muted text-center">5'10"</div>
+      <div class="col d-none d-md-block text-muted text-center">225</div>
+      <div class="col d-none d-md-block text-muted text-center">01/03/1998</div>
+    </div>
+  </div>
+  
+  
+  <!-- Player: Zach Thompson -->
+  <div class="container mb-4 roster-row border-bottom pb-2 px-4">
+    <div class="row align-items-center">
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="images/zachthompson.png" class="player-headshot me-3" alt="Zach">
+        <div>
+          <h5 class="fw-bold">Zach Thompson <span class="text-muted">#73</span></h5>
+          <div class="d-md-none small text-muted mt-1">
+            Position: P<br>
+            B/T: R/R<br>
+            Ht: 6'7"<br>
+            Wt: 250<br>
+            DOB: 10/23/1993
+          </div>
+        </div>
+      </div>
+      <div class="col d-none d-md-block text-muted text-center">P</div>
+      <div class="col d-none d-md-block text-muted text-center">R/R</div>
+      <div class="col d-none d-md-block text-muted text-center">6'7"</div>
+      <div class="col d-none d-md-block text-muted text-center">250</div>
+      <div class="col d-none d-md-block text-muted text-center">10/23/1993</div>
+    </div>
+  </div>
+  
+
+  <!-- Tab Content -->
+  <div class="tab-content" id="rosterTabsContent">
+    <!-- Active Roster -->
+    <section class="container py-5">     
       
-        <!-- Add more players similarly -->
+      <h3 class="bg-light px-3 py-2 fw-bold border-start border-4 border-danger text-dark mb-4">Catchers</h3>
+
+      <!-- Column headers (visible only on desktop) -->
+      <div class="container mb-2 d-none d-md-flex text-muted fw-bold px-4">
+        <div class="col-md-4"> </div>
+        <div class="col text-center">Position</div>
+        <div class="col text-center">B/T</div>
+        <div class="col text-center">Height</div>
+        <div class="col text-center">Weight</div>
+        <div class="col text-center">DOB</div>
+      </div>
+
       
+<!-- Player: Drake Baldwin -->
+<div class="container mb-4 roster-row border-bottom pb-2 px-4">
+  <div class="row align-items-center">
+    <div class="col-md-4 d-flex align-items-center">
+      <img src="images/drake.png" class="player-headshot me-3" alt="Drake">
+      <div>
+        <h5 class="fw-bold">Drake Baldwin <span class="text-muted">#30</span></h5>
+        <div class="d-md-none small text-muted mt-1">
+          Position: C<br>
+          B/T: L/R<br>
+          Ht: 6'0"<br>
+          Wt: 210<br>
+          DOB: 03/28/2001
+        </div>
+      </div>
+    </div>
+    <div class="col d-none d-md-block text-muted text-center">C</div>
+    <div class="col d-none d-md-block text-muted text-center">L/R</div>
+    <div class="col d-none d-md-block text-muted text-center">6'0"</div>
+    <div class="col d-none d-md-block text-muted text-center">210</div>
+    <div class="col d-none d-md-block text-muted text-center">03/28/2001</div>
+  </div>
+</div>
+
+
+<!-- Player: Sean Murphy -->
+<div class="container mb-4 roster-row border-bottom pb-2 px-4">
+  <div class="row align-items-center">
+    <div class="col-md-4 d-flex align-items-center">
+      <img src="images/sean.png" class="player-headshot me-3" alt="Sean">
+      <div>
+        <h5 class="fw-bold">Sean Murphy <span class="text-muted">#12</span></h5>
+        <div class="d-md-none small text-muted mt-1">
+          Position: C<br>
+          B/T: R/R<br>
+          Ht: 6'3"<br>
+          Wt: 228<br>
+          DOB: 10/04/1994
+        </div>
+      </div>
+    </div>
+    <div class="col d-none d-md-block text-muted text-center">C</div>
+    <div class="col d-none d-md-block text-muted text-center">R/R</div>
+    <div class="col d-none d-md-block text-muted text-center">6'3"</div>
+    <div class="col d-none d-md-block text-muted text-center">228</div>
+    <div class="col d-none d-md-block text-muted text-center">10/04/1994</div>
+  </div>
+</div>
+            
       </section>
       
   
