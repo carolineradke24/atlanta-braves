@@ -227,12 +227,11 @@ body {
       </li>
     </ul>
   
-    <!-- Tab Content -->
     <div class="tab-content" id="rosterTabsContent">
-      <!-- Active Roster -->
-      <section class="container py-5">     
-        
-        <h3 class="bg-light px-3 py-2 fw-bold border-start border-4 border-danger text-dark mb-4">Pitchers</h3>
+      <div class="tab-pane show active" id="active" role="tabpanel" aria-labelledby="active-tab">
+        <section class="container py-5">
+
+          <h3 class="bg-light px-3 py-2 fw-bold border-start border-4 border-danger text-dark mb-4">Pitchers</h3>
 
         <!-- Column headers (visible only on desktop) -->
         <div class="container mb-2 d-none d-md-flex text-muted fw-bold px-4">
@@ -271,7 +270,7 @@ body {
       <div class="col d-none d-md-block text-muted text-center">215</div>
       <div class="col d-none d-md-block text-muted text-center">09/21/1993</div>
     </div>
-  </div>
+</div>
 
   <!-- Modal -->
 <div class="modal fade" id="ModalBummer" tabindex="-1" aria-hidden="true">
@@ -304,7 +303,7 @@ body {
         </div>
       </div>
     </div>
-  </div>
+</div>
   
   
   
@@ -964,7 +963,7 @@ body {
     <div class="modal-content overflow-hidden">
       <div class="modal-header bg-red text-white align-items-center">
         <img src="images/spencerstrider.png" class="player-headshot me-2" alt="Strider">
-        <h5 class="modal-title fw-bold mb-0">Spencer Strider – 2024 Stats</h5>
+        <h5 class="modal-title fw-bold mb-0">Spencer Strider – 2023 Stats</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body p-0">
@@ -979,10 +978,10 @@ body {
                 <i class="fas fa-notes-medical me-2" style="color: #ffc008;"></i>
                 <span class="fw-semibold">Injured in 2024</span>
               </div>
-              <p class="mb-2 fs-5"><strong>Games:</strong> 2</p>
-              <p class="mb-2 fs-5"><strong>Wins:</strong> 0</p>
-              <p class="mb-2 fs-5"><strong>ERA:</strong> 7.00</p>
-              <p class="mb-0 fs-5"><strong>WHIP:</strong> 1.67</p>
+              <p class="mb-2 fs-5"><strong>Games:</strong> 32</p>
+              <p class="mb-2 fs-5"><strong>Wins:</strong> 20</p>
+              <p class="mb-2 fs-5"><strong>ERA:</strong> 3.86</p>
+              <p class="mb-0 fs-5"><strong>WHIP:</strong> 1.09</p>
               
               <a href="https://www.espn.com/mlb/player/gamelog/_/id/4307825/spencer-strider" target="_blank" class="btn btn-outline-light mt-3">
                 See 2025 Stats
@@ -1092,7 +1091,7 @@ body {
     <div class="modal-content overflow-hidden">
       <div class="modal-header bg-red text-white align-items-center">
         <img src="images/zachthompson.png" class="player-headshot me-2" alt="Zach">
-        <h5 class="modal-title fw-bold mb-0">Zach Thompson – 2022 Stats</h5>
+        <h5 class="modal-title fw-bold mb-0">Zach Thompson – 2024 Stats</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
       <div class="modal-body p-0">
@@ -1103,14 +1102,10 @@ body {
           </div>
           <div class="col-md-4 d-flex justify-content-center align-items-center bg-navy text-white">
             <div class="text-center p-4">
-              <div class="mb-3 text-center">
-                <i class="fas fa-clock" style="color: #ffc008;"></i>
-                <span class="fw-semibold">Took 2-Year Break</span>
-              </div>
-              <p class="mb-2 fs-5"><strong>Games:</strong> 29</p>
-              <p class="mb-2 fs-5"><strong>Wins:</strong> 3</p>
-              <p class="mb-2 fs-5"><strong>ERA:</strong> 5.18</p>
-              <p class="mb-0 fs-5"><strong>WHIP:</strong> 1.51</p>
+              <p class="mb-2 fs-5"><strong>Games:</strong> 26</p>
+              <p class="mb-2 fs-5"><strong>Wins:</strong> 4</p>
+              <p class="mb-2 fs-5"><strong>ERA:</strong> 5.39</p>
+              <p class="mb-0 fs-5"><strong>WHIP:</strong> 1.47</p>
 
               <a href="https://www.espn.com/mlb/player/gamelog/_/id/40761/zach-thompson" target="_blank" class="btn btn-outline-light mt-3">
                 See 2025 Stats
@@ -1979,37 +1974,215 @@ body {
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-            
-      </section>
-      
-  
-      <!-- Injury List -->
-      <div class="tab-pane fade" id="injured" role="tabpanel">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Ozzie Albies – 2B – #1 (15-day IL)</li>
-          <li class="list-group-item">Kyle Wright – SP – #30 (60-day IL)</li>
-          <!-- Add more -->
-        </ul>
+        </section>
       </div>
-  
-      <!-- Coaches -->
-      <div class="tab-pane fade" id="coaches" role="tabpanel">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Brian Snitker – Manager</li>
-          <li class="list-group-item">Ron Washington – Third Base Coach</li>
-          <li class="list-group-item">Kevin Seitzer – Hitting Coach</li>
-          <!-- Add more -->
-        </ul>
+
+      <!-- Injury List tab -->
+  <div class="tab-pane" id="injured" role="tabpanel" aria-labelledby="injured-tab">
+    <section class="container py-5">
+      <h3 class="bg-light px-3 py-2 fw-bold border-start border-4 border-danger text-dark mb-4">7-day IL</h3>
+      <!-- Column headers (visible only on desktop) -->
+      <div class="container mb-2 d-none d-md-flex text-muted fw-bold px-4">
+        <div class="col-md-4"> </div>
+        <div class="col text-center">Position</div>
+        <div class="col text-center">B/T</div>
+        <div class="col text-center">Height</div>
+        <div class="col text-center">Weight</div>
+        <div class="col text-center">DOB</div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">No current players</li>
+      </ul>
+      <br />
+      <br />
+      <h3 class="bg-light px-3 py-2 fw-bold border-start border-4 border-danger text-dark mb-4">10-day IL</h3>
+      <!-- Column headers (visible only on desktop) -->
+      <div class="container mb-2 d-none d-md-flex text-muted fw-bold px-4">
+        <div class="col-md-4"> </div>
+        <div class="col text-center">Position</div>
+        <div class="col text-center">B/T</div>
+        <div class="col text-center">Height</div>
+        <div class="col text-center">Weight</div>
+        <div class="col text-center">DOB</div>
+      </div>
+<div class="container mb-4 roster-row pb-2 px-4">
+  <div class="row align-items-center">
+    <div class="col-md-4 d-flex align-items-center">
+      <img src="images/marcellozuna.png" class="player-headshot me-3" alt="Nacho">
+      <div>
+        <h5 class="fw-bold mb-0 player-name">
+          <a href="#" class="player-link" data-bs-toggle="modal" data-bs-target="#ModalNacho">
+            Nacho Alvarez Jr. <span class="text-muted">#67</span>
+          </a>
+        </h5>
+        <div class="d-md-none small text-muted mt-1">
+          Position: DH<br>
+          B/T: R/R<br>
+          Ht: 6'1"<br>
+          Wt: 225<br>
+          DOB: 11/12/1990
+        </div>
       </div>
     </div>
-  </section>
+    <div class="col d-none d-md-block text-muted text-center">DH</div>
+    <div class="col d-none d-md-block text-muted text-center">R/R</div>
+    <div class="col d-none d-md-block text-muted text-center">6'1"</div>
+    <div class="col d-none d-md-block text-muted text-center">225</div>
+    <div class="col d-none d-md-block text-muted text-center">11/12/1990</div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalNacho" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content overflow-hidden">
+      <div class="modal-header bg-red text-white align-items-center">
+        <img src="images/marcellozuna.png" class="player-headshot me-2" alt="Ozuna">
+        <h5 class="modal-title fw-bold mb-0">Nacho Alvarez Jr. – 2024 Stats</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="row g-0">
+          <div class="col-md-8 position-relative">
+            <img src="images/marcellaction.jpg" alt="Action Shot" class="img-fluid h-100 w-100 object-fit-cover">
+            <div class="bg-overlay"></div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-center align-items-center bg-navy text-white">
+            <div class="text-center p-4">
+              <p class="mb-2 fs-5"><strong>Games:</strong> 162</p>
+              <p class="mb-2 fs-5"><strong>AVG:</strong> .302</p>
+              <p class="mb-2 fs-5"><strong>SLG:</strong> .546</p>
+              <p class="mb-0 fs-5"><strong>OPS:</strong> .924</p>
+
+              <a href="https://www.espn.com/mlb/player/gamelog/_/id/31668/marcell-ozuna" target="_blank" class="btn btn-outline-light mt-3">
+                See 2025 Stats
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+       
+<div class="container mb-4 roster-row pb-2 px-4">
+  <div class="row align-items-center">
+    <div class="col-md-4 d-flex align-items-center">
+      <img src="images/marcellozuna.png" class="player-headshot me-3" alt="Acuna">
+      <div>
+        <h5 class="fw-bold mb-0 player-name">
+          <a href="#" class="player-link" data-bs-toggle="modal" data-bs-target="#ModalAcuna">
+            Ronald Acuña Jr. <span class="text-muted">#13</span>
+          </a>
+        </h5>
+        <div class="d-md-none small text-muted mt-1">
+          Position: DH<br>
+          B/T: R/R<br>
+          Ht: 6'1"<br>
+          Wt: 225<br>
+          DOB: 11/12/1990
+        </div>
+      </div>
+    </div>
+    <div class="col d-none d-md-block text-muted text-center">DH</div>
+    <div class="col d-none d-md-block text-muted text-center">R/R</div>
+    <div class="col d-none d-md-block text-muted text-center">6'1"</div>
+    <div class="col d-none d-md-block text-muted text-center">225</div>
+    <div class="col d-none d-md-block text-muted text-center">11/12/1990</div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalAcuna" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content overflow-hidden">
+      <div class="modal-header bg-red text-white align-items-center">
+        <img src="images/marcellozuna.png" class="player-headshot me-2" alt="Acuna">
+        <h5 class="modal-title fw-bold mb-0">Ronald Acuña Jr. – 2024 Stats</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body p-0">
+        <div class="row g-0">
+          <div class="col-md-8 position-relative">
+            <img src="images/marcellaction.jpg" alt="Action Shot" class="img-fluid h-100 w-100 object-fit-cover">
+            <div class="bg-overlay"></div>
+          </div>
+          <div class="col-md-4 d-flex justify-content-center align-items-center bg-navy text-white">
+            <div class="text-center p-4">
+              <p class="mb-2 fs-5"><strong>Games:</strong> 162</p>
+              <p class="mb-2 fs-5"><strong>AVG:</strong> .302</p>
+              <p class="mb-2 fs-5"><strong>SLG:</strong> .546</p>
+              <p class="mb-0 fs-5"><strong>OPS:</strong> .924</p>
+
+              <a href="https://www.espn.com/mlb/player/gamelog/_/id/31668/marcell-ozuna" target="_blank" class="btn btn-outline-light mt-3">
+                See 2025 Stats
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <br />
+      <h3 class="bg-light px-3 py-2 fw-bold border-start border-4 border-danger text-dark mb-4">15-day IL</h3>
+      <!-- Column headers (visible only on desktop) -->
+      <div class="container mb-2 d-none d-md-flex text-muted fw-bold px-4">
+        <div class="col-md-4"> </div>
+        <div class="col text-center">Position</div>
+        <div class="col text-center">B/T</div>
+        <div class="col text-center">Height</div>
+        <div class="col text-center">Weight</div>
+        <div class="col text-center">DOB</div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">No current players</li>
+      </ul>
+      <br />
+      <br />
+      <h3 class="bg-light px-3 py-2 fw-bold border-start border-4 border-danger text-dark mb-4">60-day IL</h3>
+      <!-- Column headers (visible only on desktop) -->
+      <div class="container mb-2 d-none d-md-flex text-muted fw-bold px-4">
+        <div class="col-md-4"> </div>
+        <div class="col text-center">Position</div>
+        <div class="col text-center">B/T</div>
+        <div class="col text-center">Height</div>
+        <div class="col text-center">Weight</div>
+        <div class="col text-center">DOB</div>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Joe Jiménez – RP – #77</li>
+        <li class="list-group-item">Reynaldo López – SP – #40</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Coaches tab -->
+  <div class="tab-pane" id="coaches" role="tabpanel" aria-labelledby="coaches-tab">
+    <section class="container py-5">
+      <h3 class="bg-light px-3 py-2 fw-bold border-start border-4 border-danger text-dark mb-4">Coaches</h3>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Brian Snitker – 43 – Manager</li>
+        <li class="list-group-item">Walt Weiss – 4 – Bench Coach/Infield Coach</li>
+        <li class="list-group-item">Tim Hyers – 80 – Hitting Coach</li>
+        <li class="list-group-item">Rick Kranitz – 39 – Pitching Coach</li>
+        <li class="list-group-item">Carlos Mendez – 83 – Assistant Hitting Coach</li>
+        <li class="list-group-item">Hugh Quattlebaum – 82 – Assistant Hitting Coach</li>
+        <li class="list-group-item">Tom Goodwin – 88 – First Base Coach</li>
+        <li class="list-group-item">Matt Tuiasosopo – 89 – Third Base Coach</li>
+        <li class="list-group-item">Erick Abreu – 85 – Bullpen Coach</li>
+        <li class="list-group-item">Eddie Pérez – 95 – Major League Coach</li>
+        <li class="list-group-item">José Yépez – 96 – Bullpen Catcher</li>
+        <li class="list-group-item">Matt Winn – 98 – Bullpen Catcher</li>
+
+        <!-- staff -->
+        <li class="list-group-item">Rob Smith – Manager, Video Operations</li>
+        <li class="list-group-item">Jimmy Leo – Replay Coordinator</li>
+      </ul>
+    </section>
+  </div>
+
+    </div>
   
 
 
