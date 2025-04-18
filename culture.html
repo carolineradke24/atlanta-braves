@@ -79,7 +79,31 @@ body {
 .footer .social-icons a:hover {
   color: #CE1141 !important;
 }
+.culture-carousel-section {
+  background-color: #13274F; /* Braves navy */
+  overflow-x: hidden;
+}
 
+.carousel-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  padding: 0 1rem;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-img {
+  height: 200px;
+  width: auto;
+  border-radius: 10px;
+  flex: 0 0 auto;
+  object-fit: cover;
+}
   </style>
 </head>
 <body class="bg-light">
@@ -108,11 +132,16 @@ body {
   </nav>
 
   <section class="container py-5">
+    <h2 class="text-center fw-bold mb-4">Atlanta Braves Culture</h2>
+    <br />
+    <br />
+    <br />
 
     <!-- 1. The Chop -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6 order-md-1">
         <h3 class="fw-bold">The Chop</h3>
+        <div style="height: 6px; width: 400px; background-color: #CE1141; margin-bottom: 12px;"></div>
         <p>During key moments at Truist Park, fans raise their arms and rhythmically perform the iconic Chop chant that echoes through the stadium. At night games, it becomes even more powerful as fans wave their phone flashlights in unison, lighting up the park in a stunning display of unity and Braves pride. Although this tradition, and the accompanying music, has been officially banned, Braves fans continue to perform the chant themselves.</p>
       </div>
       <div class="col-md-6 order-md-2 text-center">
@@ -123,8 +152,9 @@ body {
     <!-- 2. 7th Inning Stretch -->
     <div class="row align-items-center mb-5">
       <div class="col-md-6 order-md-2">
-        <h3 class="fw-bold">7th Inning Stretch”</h3>
-        <p>During the 7th inning stretch at Braves home games, fans come alive with clapping, dancing, and singing along to John Denver’s <em>Thank God I'm A Country Boy.</em> The energy continues with a lovely rendition of <em>God Bless America</em>, performed by renowned tenor Timothy Miller, creating a powerful moment of unity and hometown pride.</p>
+        <h3 class="fw-bold">7th Inning Stretch</h3>
+        <div style="height: 6px; width: 400px; background-color: #CE1141; margin-bottom: 12px;"></div>
+        <p>During the 7th inning stretch at Braves home games, fans come alive with clapping, dancing, and singing along to John Denver’s <em>"Thank God I'm A Country Boy."</em> The energy continues with a lovely rendition of <em>"God Bless America,"</em> performed by renowned tenor Timothy Miller, creating a powerful moment of unity and hometown pride.</p>
       </div>
       <div class="col-md-6 order-md-1 text-center">
         <img src="images/seventh-inning.jpg" alt="7th Inning Stretch" class="img-fluid rounded">
@@ -133,25 +163,41 @@ body {
 
     <!-- 3. Beat the Freeze -->
     <div class="row align-items-center mb-5">
-      <div class="col-md-6 order-md-2">
+      <div class="col-md-6 order-md-1">
         <h3 class="fw-bold">Beat the Freeze</h3>
+        <div style="height: 6px; width: 400px; background-color: #CE1141; margin-bottom: 12px;"></div>
         <p>One lucky fan races "The Freeze", a sprinting superhero in goggles, spandex, and a blue bodysuit. He lets fans get a head start — then smokes them down the warning track in a hilarious finish.</p>
       </div>
-      <div class="col-md-6 order-md-1 text-center">
+      <div class="col-md-6 order-md-2 text-center">
         <img src="images/freeze.webp" alt="Beat the Freeze" class="img-fluid rounded">
       </div>
     </div>
 
     <!-- 4. Fireworks -->
     <div class="row align-items-center mb-5">
-      <div class="col-md-6 order-md-2 text-center">
-        <img src="images/fireworkst.jpeg" alt="Fireworks at Truist Park" class="img-fluid rounded">
-      </div>
-      <div class="col-md-6 order-md-1">
+      <div class="col-md-6 order-md-2">
         <h3 class="fw-bold">Friday Night Fireworks</h3>
+        <div style="height: 6px; width: 400px; background-color: #CE1141; margin-bottom: 12px;"></div>
         <p>Along with every home run scored, the Friday Night Fireworks in a Truist Park staple. Fireworks light up the sky after Friday home games all season long.</p>
       </div>
+      <div class="col-md-6 order-md-1 text-center">
+        <img src="images/fireworks.jpeg" alt="Fireworks at Truist Park" class="img-fluid rounded">
+      </div>
     </div>
+  </div>
+  </section>
+
+  <section class="culture-carousel-section py-5">
+    <div class="carousel-container">
+      <div class="carousel-track">
+        <img src="images/fans1.jpg" alt="Fans 1" class="carousel-img">
+        <img src="images/fans2.jpg" alt="Fans 2" class="carousel-img">
+        <img src="images/fans3.jpg" alt="Fans 3" class="carousel-img">
+        <img src="images/fans4.jpg" alt="Fans 4" class="carousel-img">
+        <img src="images/fans5.jpg" alt="Fans 5" class="carousel-img">
+      </div>
+    </div>
+  </section>
 
 
 
