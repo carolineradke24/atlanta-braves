@@ -125,7 +125,7 @@ body {
 }
 
 .collage-container {
-  height: 300px;
+  height: 420px;
   position: relative;
 }
 
@@ -136,14 +136,24 @@ body {
   width: 120px;
   height: 120px;
   object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, z-index 0.3s ease;
 }
 
-/* Positioning the overlapping collage images */
-.img1 { top: 0; left: 30px; transform: rotate(-5deg); }
-.img2 { top: 20px; left: 100px; transform: rotate(6deg); }
-.img3 { top: 80px; left: 60px; transform: rotate(-10deg); }
-.img4 { top: 130px; left: 140px; transform: rotate(5deg); }
+/* Hover effect */
+.pet-img:hover {
+  transform: scale(1.4) rotate(0deg);
+  z-index: 10;
+}
+
+/* Spaced-out layout */
+.img1 { top: 0; left: 0; transform: rotate(-4deg); }
+.img2 { top: 20px; left: 150px; transform: rotate(6deg); }
+.img3 { top: 100px; left: 60px; transform: rotate(-8deg); }
+.img4 { top: 150px; left: 170px; transform: rotate(5deg); }
+.img5 { top: 40px; left: 280px; transform: rotate(-3deg); }
+.img6 { top: 120px; left: 350px; transform: rotate(7deg); }
+.img7 { top: 210px; left: 270px; transform: rotate(-6deg); }
   </style>
 </head>
 <body class="bg-light">
@@ -342,17 +352,20 @@ body {
         
         <!-- Collage -->
         <div class="col-md-6 position-relative collage-container">
-          <img src="images/pet1.jpg" class="pet-img img1">
-          <img src="images/pet2.jpg" class="pet-img img2">
-          <img src="images/pet3.jpg" class="pet-img img3">
-          <img src="images/pet4.jpg" class="pet-img img4">
-          <!-- Add more as needed -->
+          <img src="images/adog.webp" class="pet-img img1">
+          <img src="images/dog1.webp" class="pet-img img2">
+          <img src="images/doggg.png" class="pet-img img3">
+          <img src="images/olsondog.png" class="pet-img img4">
+          <img src="images/ozziefish.jpeg" class="pet-img img5">
+          <img src="images/ozzpet.webp" class="pet-img img6">
+          <img src="images/smalldog.png" class="pet-img img7">
         </div>
   
         <!-- Text -->
         <div class="col-md-6">
-          <p class="lead">From dugout dogs to clubhouse cats, the Braves love their furry companions. These four-legged friends bring joy, comfort, and championship energy to Braves Country. Whether it's pre-game cuddles or locker room cameos, our players’ pets are part of the team.</p>
-          <a href="https://www.mlbshop.com/pets/braves" class="btn btn-danger mt-3" target="_blank">Shop Braves Pet Gear</a>
+          <p>The Atlanta Braves don’t just show love for their players – they extend that affection to their furry companions too. From clubhouse pups to foundation-supported rescue efforts, the Braves celebrate the special bond between athletes and their pets. Fans are part of the pack as well, with pet-themed merch, events like Bark in the Park, and heartwarming features of their furry friends. For the Braves, pets are family—and family is everything.</p>
+          <a href="https://www.mlbshop.com/atlanta-braves/pet-gear/t-36779616+d-2361662395+z-93-3161115524" class="btn btn-danger mt-3" target="_blank">Shop MLB Braves Pet Gear</a>
+          <a href="https://www.petco.com/shop/en/petcostore/category/pet-jerseys-and-sports-gear/mlb-pet-gear?params=filters%255BTeam%255D%255B0%255D%3DAtlanta%2520Braves" class="btn btn-danger mt-3" target="_blank">Shop Petco Braves Pet Gear</a>
         </div>
   
       </div>
