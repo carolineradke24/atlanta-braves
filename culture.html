@@ -80,28 +80,30 @@ body {
   color: #CE1141 !important;
 }
 .culture-carousel-section {
-  background-color: #13274F; /* Braves navy */
+  background-color: #13274F;
   overflow-x: hidden;
+  position: relative;
+  padding: 3rem 0;
 }
 
 .carousel-container {
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  white-space: nowrap;
-  padding: 0 1rem;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
 .carousel-track {
   display: flex;
-  gap: 1rem;
+  animation: scroll-left 60s linear infinite;
+  width: max-content;
 }
 
 .carousel-img {
   height: 200px;
   width: auto;
+  flex-shrink: 0;
+  margin-right: 16px;
   border-radius: 10px;
-  flex: 0 0 auto;
   object-fit: cover;
 }
   </style>
@@ -132,7 +134,7 @@ body {
   </nav>
 
   <section class="container py-5">
-    <h2 class="text-center fw-bold mb-4">Atlanta Braves Culture</h2>
+    <h2 class="text-center fw-bold mb-4">What are some Atlanta Braves Traditions?</h2>
     <br />
     <br />
     <br />
@@ -187,14 +189,61 @@ body {
   </div>
   </section>
 
-  <section class="culture-carousel-section py-5">
+  <section class="culture-carousel-section">
     <div class="carousel-container">
       <div class="carousel-track">
         <img src="images/fans1.jpg" alt="Fans 1" class="carousel-img">
         <img src="images/fans2.jpg" alt="Fans 2" class="carousel-img">
-        <img src="images/fans3.jpg" alt="Fans 3" class="carousel-img">
+        <img src="images/fans3.jpeg" alt="Fans 3" class="carousel-img">
         <img src="images/fans4.jpg" alt="Fans 4" class="carousel-img">
-        <img src="images/fans5.jpg" alt="Fans 5" class="carousel-img">
+        <img src="images/fans5.webp" alt="Fans 5" class="carousel-img">
+        <img src="images/fans6.webp" alt="Fans 6" class="carousel-img">
+        <img src="images/braves7.jpg" alt="Fans 7" class="carousel-img">
+        <img src="images/fans8.jpg" alt="Fans 8" class="carousel-img">
+        <img src="images/fans9.jpeg" alt="Fans 9" class="carousel-img">
+        <img src="images/fans10.jpg" alt="Fans 10" class="carousel-img">
+        <img src="images/fans11.webp" alt="Fans 11" class="carousel-img">
+        <img src="images/fans12.jpg" alt="Fans 12" class="carousel-img">
+        <img src="images/fans13.jpg" alt="Fans 13" class="carousel-img">
+        <img src="images/fans14.jpeg" alt="Fans 14" class="carousel-img">
+        <img src="images/fans15.jpg" alt="Fans 15" class="carousel-img">
+        <!-- Duplicated -->
+        <img src="images/fans1.jpg" alt="Fans 1" class="carousel-img">
+        <img src="images/fans2.jpg" alt="Fans 2" class="carousel-img">
+        <img src="images/fans3.jpeg" alt="Fans 3" class="carousel-img">
+        <img src="images/fans4.jpg" alt="Fans 4" class="carousel-img">
+        <img src="images/fans5.webp" alt="Fans 5" class="carousel-img">
+        <img src="images/fans6.webp" alt="Fans 6" class="carousel-img">
+        <img src="images/braves7.jpg" alt="Fans 7" class="carousel-img">
+        <img src="images/fans8.jpg" alt="Fans 8" class="carousel-img">
+        <img src="images/fans9.jpeg" alt="Fans 9" class="carousel-img">
+        <img src="images/fans10.jpg" alt="Fans 10" class="carousel-img">
+        <img src="images/fans11.webp" alt="Fans 11" class="carousel-img">
+        <img src="images/fans12.jpg" alt="Fans 12" class="carousel-img">
+        <img src="images/fans13.jpg" alt="Fans 13" class="carousel-img">
+        <img src="images/fans14.jpeg" alt="Fans 14" class="carousel-img">
+        <img src="images/fans15.jpg" alt="Fans 15" class="carousel-img">
+      </div>
+    </div>
+  </section>
+
+  <section class="mascot-section text-white py-5">
+    <div class="container">
+      <div style="height: 6px; width: 200px; background-color: #CE1141; margin-bottom: 12px;"></div>
+      <h2 class="fw-bold">Meet the Mascot</h2>
+  
+      <div class="row align-items-center mt-4">
+        <div class="col-md-6">
+          <p class="lead">
+            Say hello to <strong>Blooper</strong>, the Braves’ lovable mischief-maker! Whether he’s ziplining into the stadium, photobombing fans, or causing chaos on the dugout, Blooper brings wild energy to every home game.
+          </p>
+          <p class="lead">
+            More than just a mascot, he’s a crowd-favorite, TikTok star, and the spirit animal of Braves Country.
+          </p>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="images/blooper.webp" alt="Blooper the Mascot" class="img-fluid rounded blooper-img">
+        </div>
       </div>
     </div>
   </section>
@@ -230,6 +279,27 @@ body {
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    window.addEventListener('load', () => {
+      const track = document.querySelector('.carousel-track');
+      const totalWidth = track.scrollWidth / 2; // Width of one image set
+      track.style.animation = `scroll-left 60s linear infinite`;
+  
+      const styleSheet = document.createElement('style');
+      styleSheet.innerHTML = `
+        @keyframes scroll-left {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-${totalWidth}px);
+          }
+        }
+      `;
+      document.head.appendChild(styleSheet);
+    });
+  </script>
 
 </body>
 </html>
