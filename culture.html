@@ -147,13 +147,39 @@ body {
 }
 
 /* Spaced-out layout */
-.img1 { top: 0; left: 0; transform: rotate(-4deg); }
-.img2 { top: 20px; left: 150px; transform: rotate(6deg); }
-.img3 { top: 100px; left: 60px; transform: rotate(-8deg); }
-.img4 { top: 150px; left: 170px; transform: rotate(5deg); }
-.img5 { top: 40px; left: 280px; transform: rotate(-3deg); }
-.img6 { top: 120px; left: 350px; transform: rotate(7deg); }
-.img7 { top: 210px; left: 270px; transform: rotate(-6deg); }
+.img1 { top: 0; left: 20px; transform: rotate(-4deg); }
+.img2 { top: 20px; left: 170px; transform: rotate(6deg); }
+.img3 { top: 100px; left: 80px; transform: rotate(-8deg); }
+.img4 { top: 150px; left: 190px; transform: rotate(5deg); }
+.img5 { top: 40px; left: 300px; transform: rotate(-3deg); }
+.img6 { top: 120px; left: 370px; transform: rotate(7deg); }
+.img7 { top: 210px; left: 290px; transform: rotate(-6deg); }
+
+.snitbear-img {
+  max-width: 100%;
+  width: 700px;     /* Or however big you want it on desktop */
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .snitbear-img {
+    width: 100%;     /* Full width on smaller screens */
+    margin-top: 1rem;
+  }
+}
+
+.ozziefoundation-img {
+  max-width: 100%;
+  width: 700px;     /* Or however big you want it on desktop */
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .ozziefoundation-img {
+    width: 100%;     /* Full width on smaller screens */
+    margin-top: 1rem;
+  }
+}
   </style>
 </head>
 <body class="bg-light">
@@ -182,6 +208,7 @@ body {
 
   <section class="container py-5 bg-light">
     <h2 class="text-center fw-bold mb-4">What are some Atlanta Braves Traditions?</h2>
+    <br />
 
     <!-- 1. The Chop -->
     <div class="row align-items-center mb-5">
@@ -373,25 +400,25 @@ body {
   </section>
 
   <section class="py-5 bg-light">
-    <div class="container d-md-flex align-items-center gap-5">
-      <img src="images/snitbear.jpg" alt="Snitbear" class="img-fluid rounded mb-4 mb-md-0" style="max-width: 300px;">
-      <div>
+    <div class="container d-md-flex align-items-center gap-5"><div>
         <h4 class="fw-bold">Honorable Mention: Snitbear</h4>
-        <div style="height: 6px; width: 200px; background-color: #CE1141;" class="mb-3"></div>
-        <p>A plush bear with a coaching legacy, Snitbear became a clubhouse icon during the 2021 World Series run. The players brought him everywhere — even Ozuna gave him a chain. He’s a fan favorite and the unofficial team hype man (or bear).</p>
+        <div style="height: 6px; width: 400px; background-color: #CE1141;" class="mb-3"></div>
+        <p>What started as a fan’s thoughtful gesture turned into a Braves legend. In 2024, longtime supporters Doris and Jim Bender sent a stuffed bear, decked out in a Braves cap and red bandana, to Manager Brian Snitker, hoping it would bring good luck and keep “Big Bear” Marcell Ozuna company. The team named it Snitbear, and its impact was immediate.</p>
+        <p>After debuting in the dugout during a 9–2 win over the Rays, the Braves surged on a hot streak. Players like Austin Riley and Jarred Kelenic found their groove, and fans quickly adopted Snitbear as a symbol of unity and superstition. When Snitbear missed a road trip and the Braves lost seven straight, its return sparked a 10–0 blowout – sealing its good-luck status.</p>
+        <p>Now a beloved part of Braves culture, Snitbear proves that sometimes the smallest gestures bring the biggest wins.</p>
       </div>
+      <img src="images/snitbear.jpeg" alt="Snitbear in the Dugout" class="img-fluid snitbear-img rounded">
     </div>
   </section>
 
   <section class="py-5 bg-light">
-    <div class="container d-md-flex align-items-center gap-5">
-      <img src="images/ozziefoundation.jpg" alt="Ozzie Albies Foundation" class="img-fluid rounded mb-4 mb-md-0" style="max-width: 300px;">
-      <div>
+    <div class="container d-md-flex align-items-center gap-5"><div>
         <h4 class="fw-bold">Ozzie Albies Foundation</h4>
-        <div style="height: 6px; width: 200px; background-color: #CE1141;" class="mb-3"></div>
-        <p>Founded by Braves star Ozzie Albies, this foundation supports animal rescues, no-kill shelters, and adoption services. Ozzie’s love for animals extends far beyond the field—his goal is to make every furry friend feel safe and loved.</p>
-        <a href="https://ozziealbiesfoundation.org/" class="btn btn-dark mt-2" target="_blank">Visit Foundation Website</a>
+        <div style="height: 6px; width: 400px; background-color: #CE1141;" class="mb-3"></div>
+        <p>Founded by Braves star Ozzie Albies, the Ozzie Albies Foundation is committed to supporting animal rescues, no-kill shelters, and adoption services across the country. Inspired by Ozzie's deep love for animals, the foundation works to ensure that every pet has a chance at a safe, happy life. In addition to funding shelter improvements and medical care, the organization raises awareness about responsible pet ownership and the importance of adoption. Ozzie hopes to create a world where every furry friend is treated with the love and care they deserve.</p>
+        <a href="https://www.ozziealbiesfoundation.org/" class="btn btn-danger mt-3" target="_blank">Visit The Ozzie Albies Foundation Website</a>
       </div>
+      <img src="images/ozziealbiesfoundation.webp" alt="Ozzie Albies Foundation" class="img-fluid ozziefoundation-img rounded">
     </div>
   </section>
 
