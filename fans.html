@@ -16,10 +16,10 @@
     }
 .custom-navbar {
   background-color: #13274F; /* Braves navy blue */
-  height: 50px; /* Makes the bar thinner */
+  height: 60px; /* Makes the bar thinner */
 }
 body {
-  padding-top: 50px; /* match the height of your navbar */
+  padding-top: 60px; /* match the height of your navbar */
 }
 .braves-country-logo {
   height: 35px; /* Adjust size as needed */
@@ -46,7 +46,26 @@ body {
   border-radius: 5px;
   padding: 6px 12px;
 }
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 150px;
+    background-color: #13274F !important; /* Braves Navy */
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+  }
 
+  .navbar-nav .nav-link {
+    color: white !important;
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link.active {
+    color: #ffffff !important; /* Braves Red for active */
+  }
+}
 .footer {
   background-color: #13274F !important;
   font-size: 0.9rem;
@@ -107,7 +126,7 @@ body {
         <a href="https://www.tiktok.com/@braves?lang=en" target="_blank" class="text-white">
           <i class="bi bi-tiktok"></i>
         </a>
-        <a href="https://www.youtube.com/user/Braves" target="_blank" class="text-white">
+        <a href="https://www.youtube.com/channel/UCNWnkblY5_kmf4OQ9l0LgnA" target="_blank" class="text-white">
           <i class="bi bi-youtube"></i>
         </a>
       </div>      

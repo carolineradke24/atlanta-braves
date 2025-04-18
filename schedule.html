@@ -16,11 +16,14 @@
     }
 .custom-navbar {
   background-color: #13274F; /* Braves navy blue */
-  height: 50px; /* Makes the bar thinner */
+  height: 60px; /* Makes the bar thinner */
 }
+
 body {
-  padding-top: 50px; /* match the height of your navbar */
+  padding-top: 60px; /* match the height of your navbar */
+  min-height: 100vh;
 }
+
 .braves-country-logo {
   height: 35px; /* Adjust size as needed */
   width: auto;
@@ -46,7 +49,26 @@ body {
   border-radius: 5px;
   padding: 6px 12px;
 }
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 150px;
+    background-color: #13274F !important; /* Braves Navy */
+    padding: 1rem;
+    border-radius: 0 0 10px 10px;
+  }
 
+  .navbar-nav .nav-link {
+    color: white !important;
+    text-align: center;
+  }
+
+  .navbar-nav .nav-link.active {
+    color: #ffffff !important; /* Braves Red for active */
+  }
+}
 .footer {
   background-color: #13274F !important;
   font-size: 0.9rem;
@@ -86,34 +108,45 @@ body {
   color: white;
   border-color: #13274F;
 }
+#tracker-section {
+  text-align: center;
+  margin-top: 40px;  /* space between title and map */
+}
+
+.team-map {
+  max-width: 60%;     /* scale map down on all screens */
+  height: auto;
+}
   </style>
 </head>
 <body class="bg-light">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg custom-navbar py-2 fixed-top">
-    <div class="container-fluid px-4 d-flex justify-content-between align-items-center">
-        <a class="navbar-brand" href="#">
-            <img src="images/WeAreBravesCountry.svg" class="braves-country-logo" alt="We Are Braves Country">
-          </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
-        <ul class="navbar-nav mb-2 mb-lg-0 small fw-bold">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="roster.html">Roster</a></li>
-          <li class="nav-item"><a class="nav-link active" href="schedule.html">Schedule</a></li>
-          <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
-          <li class="nav-item"><a class="nav-link" href="culture.html">Culture</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="fans.html">Fans</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
+  <header>
+    <nav class="navbar navbar-expand-lg custom-navbar py-2 fixed-top">
+      <div class="container-fluid px-4 d-flex justify-content-between align-items-center">
+          <a class="navbar-brand" href="#">
+              <img src="images/WeAreBravesCountry.svg" class="braves-country-logo" alt="We Are Braves Country">
+            </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+          <ul class="navbar-nav mb-2 mb-lg-0 small fw-bold">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="roster.html">Roster</a></li>
+            <li class="nav-item"><a class="nav-link active" href="schedule.html">Schedule</a></li>
+            <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
+            <li class="nav-item"><a class="nav-link" href="culture.html">Culture</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="fans.html">Fans</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <div id="nextGameCountdown" class="alert alert-primary text-center fw-bold" style="font-size: 1.25rem;">
+  <div id="nextGameCountdown" class="alert alert-primary text-center fw-bold" style="font-size: 2rem;">
     Loading next game countdown...
   </div>
 
@@ -2635,16 +2668,17 @@ body {
     </div>
 
   </div>
-</section>
 
-<section class="container my-5" id="tracker-section">
-  <div style="height: 6px; width: 200px; background-color: #CE1141; margin-bottom: 12px;"></div>
-  <h4 class="fw-bold text-dark">Where's the Team Now?</h4>
-  <div id="us-map-container">
-    <img src="images/USmap.png" alt="US Map" id="us-map">
-    <img src="images/baseball.png" alt="Baseball Icon" id="baseball-icon">
+  <div class="mt-5">
+    <div style="height: 6px; width: 200px; background-color: #CE1141; margin-bottom: 12px;"></div>
+    <h4 class="fw-bold text-dark">Where's the Team Now?</h4>
   </div>
-  <p id="next-game-text" class="mt-3 fw-semibold"></p>
+
+  <section id="tracker-section">
+    <p id="next-game-text" class="mt-3 fw-semibold text-center"></p>
+    <img id="team-map" src="images/USmap-braves.png" alt="Team Map" class="img-fluid team-map">
+  </section>
+
 </section>
 
   
@@ -2666,7 +2700,7 @@ body {
         <a href="https://www.tiktok.com/@braves?lang=en" target="_blank" class="text-white">
           <i class="bi bi-tiktok"></i>
         </a>
-        <a href="https://www.youtube.com/user/Braves" target="_blank" class="text-white">
+        <a href="https://www.youtube.com/channel/UCNWnkblY5_kmf4OQ9l0LgnA" target="_blank" class="text-white">
           <i class="bi bi-youtube"></i>
         </a>
       </div>      
@@ -2800,6 +2834,45 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       mapImage.src = `images/USmap-${opponent}.png`; // away map
     }
+  }
+});
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.game-card');
+  const now = new Date();
+  let nextGame = null;
+
+  cards.forEach(card => {
+    const gameDate = new Date(card.dataset.gameDate);
+    if (gameDate > now && (!nextGame || gameDate < new Date(nextGame.dataset.gameDate))) {
+      nextGame = card;
+    }
+  });
+
+  if (nextGame) {
+    const opponent = nextGame.dataset.opponent || 'TBD';
+    const homeaway = nextGame.dataset.homeaway;
+    const gameDate = new Date(nextGame.dataset.gameDate);
+    
+    const options = { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+    const formattedDate = gameDate.toLocaleString('en-US', options);
+    
+    const locationText = homeaway === 'Home' 
+      ? `vs. ${opponent} (Home)`
+      : `@ ${opponent}`;
+    
+    const nextGameText = `Next Game: ${formattedDate} – ${locationText}`;
+
+    const textElement = document.getElementById('next-game-text');
+    if (textElement) {
+      textElement.textContent = nextGameText;
+    } else {
+      console.warn('Could not find #next-game-text element.');
+    }
+  } else {
+    console.log("No upcoming game found.");
   }
 });
 </script>
