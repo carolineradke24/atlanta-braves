@@ -9,6 +9,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"/>
+
   <style>
     :root {
       --bs-primary: #CE1141; /* Braves Red */
@@ -80,6 +82,62 @@ body {
   color: #CE1141 !important;
 }
 
+.builder-container {
+      text-align: center;
+    }
+
+    .controls {
+      margin: 1rem 0;
+    }
+
+    .jersey-container {
+      position: relative;
+      display: inline-block;
+      margin-top: 2rem;
+    }
+
+    #jersey-image {
+      width: 300px;
+      height: auto;
+    }
+
+    .name-arc {
+      position: absolute;
+      top: 13%;
+      left: 50%;
+      width: 200px;
+      height: 100px;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .name-arc text {
+      fill: black;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    #number-text {
+      position: absolute;
+      top: 72%;
+      left: 53%;
+      transform: translate(-50%, -50%);
+      font-size: 22px;
+      font-weight: bold;
+      color: black;
+      pointer-events: none;
+    }
+
+    select, input {
+      font-size: 1rem;
+      padding: 0.4rem 0.6rem;
+      margin: 0 0.5rem;
+    }
+
+    label {
+      margin-right: 0.4rem;
+    }
   </style>
 </head>
 <body class="bg-light">
@@ -106,28 +164,27 @@ body {
     </div>
   </nav>
 
-  <div class="jersey-builder">
-    <div class="jersey-preview">
-      <img id="jersey-img" src="images/whiteblank.jpg" alt="Jersey" />
-      <div id="jersey-name">YOURNAME</div>
-      <div id="jersey-number">00</div>
-    </div>
+  <div class="jersey-builder text-center my-5">
+    <h2 class="fw-bold mb-4">Design Your Own Braves Jersey</h2>
   
-    <div class="jersey-controls">
-      <label for="colorway">Choose a Jersey:</label>
-      <select id="colorway">
-        <option value="home">White</option>
-        <option value="away">Navy</option>
-        <option value="alt1">Gray</option>
-        <option value="alt2">Red</option>
+    <div class="d-flex justify-content-center align-items-center flex-wrap gap-3 mb-3">
+      <select id="colorway" class="form-select w-auto">
+        <option value="white">White</option>
+        <option value="navy">Navy</option>
+        <option value="gray">Gray</option>
+        <option value="red">Red</option>
         <option value="city">City Connect</option>
       </select>
+      <label for="nameInput" class="fw-bold">Name:</label>
+      <input id="nameInput" type="text" placeholder="YOUR NAME" class="form-control w-auto">
+      <label for="numberInput" class="fw-bold">Number:</label>
+      <input id="numberInput" type="text" placeholder="00" class="form-control w-auto">
+    </div>
   
-      <label for="name">Your Name:</label>
-      <input type="text" id="name" placeholder="LASTNAME" maxlength="12">
-  
-      <label for="number">Your Number:</label>
-      <input type="number" id="number" placeholder="00" min="0" max="99">
+    <div class="jersey-display position-relative d-inline-block">
+      <img id="jerseyImage" src="images/jersey-white.jpg" alt="Fan Jersey" class="img-fluid">
+      <div id="jerseyName" class="jersey-text jersey-name">YOUR NAME</div>
+      <div id="jerseyNumber" class="jersey-text jersey-number">00</div>
     </div>
   </div>
 
@@ -160,6 +217,35 @@ body {
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const colorway = document.getElementById("colorway");
+    const jerseyImage = document.getElementById("jerseyImage");
+    const nameInput = document.getElementById("nameInput");
+    const numberInput = document.getElementById("numberInput");
+    const jerseyName = document.getElementById("jerseyName");
+    const jerseyNumber = document.getElementById("jerseyNumber");
+  
+    colorway.addEventListener("change", () => {
+      const value = colorway.value;
+      const jerseyMap = {
+        white: "jersey-white.jpg",
+        navy: "jersey-navy.jpg",
+        gray: "jersey-gray.jpg",
+        red: "jersey-red.jpg",
+        city: "jersey-city.jpg"
+      };
+      jerseyImage.src = `images/${jerseyMap[value]}`;
+    });
+  
+    nameInput.addEventListener("input", () => {
+      jerseyName.textContent = nameInput.value.toUpperCase() || "YOUR NAME";
+    });
+  
+    numberInput.addEventListener("input", () => {
+      jerseyNumber.textContent = numberInput.value || "00";
+    });
+  </script>
 
 </body>
 </html>
