@@ -106,6 +106,44 @@ body {
   border-radius: 10px;
   object-fit: cover;
 }
+.braves-pop-culture-section {
+  background-color: #13274F; /* Braves Navy */
+}
+.category-card {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.category-card ul {
+  padding-left: 1.2rem;
+  margin-bottom: 0;
+}
+
+.category-card ul li {
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.collage-container {
+  height: 300px;
+  position: relative;
+}
+
+.pet-img {
+  position: absolute;
+  border-radius: 12px;
+  border: 3px solid white;
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Positioning the overlapping collage images */
+.img1 { top: 0; left: 30px; transform: rotate(-5deg); }
+.img2 { top: 20px; left: 100px; transform: rotate(6deg); }
+.img3 { top: 80px; left: 60px; transform: rotate(-10deg); }
+.img4 { top: 130px; left: 140px; transform: rotate(5deg); }
   </style>
 </head>
 <body class="bg-light">
@@ -125,7 +163,6 @@ body {
           <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
           <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
           <li class="nav-item"><a class="nav-link active" href="culture.html">Culture</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="fans.html">Fans</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
@@ -133,11 +170,8 @@ body {
     </div>
   </nav>
 
-  <section class="container py-5">
+  <section class="container py-5 bg-light">
     <h2 class="text-center fw-bold mb-4">What are some Atlanta Braves Traditions?</h2>
-    <br />
-    <br />
-    <br />
 
     <!-- 1. The Chop -->
     <div class="row align-items-center mb-5">
@@ -227,23 +261,123 @@ body {
     </div>
   </section>
 
-  <section class="mascot-section text-white py-5">
+  <section class="mascot-section text-dark py-5">
     <div class="container">
-      <div style="height: 6px; width: 200px; background-color: #CE1141; margin-bottom: 12px;"></div>
-      <h2 class="fw-bold">Meet the Mascot</h2>
-  
-      <div class="row align-items-center mt-4">
-        <div class="col-md-6">
-          <p class="lead">
-            Say hello to <strong>Blooper</strong>, the Braves’ lovable mischief-maker! Whether he’s ziplining into the stadium, photobombing fans, or causing chaos on the dugout, Blooper brings wild energy to every home game.
-          </p>
-          <p class="lead">
-            More than just a mascot, he’s a crowd-favorite, TikTok star, and the spirit animal of Braves Country.
-          </p>
+      <h2 class="text-center fw-bold mb-4">Meet the Mascot</h2>
+
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6 order-md-2">
+          <h3 class="fw-bold">Blooper</h3>
+          <div style="height: 6px; width: 400px; background-color: #CE1141; margin-bottom: 12px;"></div>
+          <p>Say hello to <strong>Blooper</strong>, the Braves’ official mascot and the lovable mischief-maker! He was created in 2018 at the Braves fan fest and is known for his antics and ability to entertain fans both at Truist Park and in the community. Blooper's popularity has grown significantly, especially during the 2020 season when he created fun routines for fans at home. Whether he’s ziplining into the stadium, photobombing fans, running the braves flag over the field, dancing with players, or causing chaos on the dugout, Blooper brings wild energy to every home game. <br /><br /> More than just a mascot, he’s a crowd-favorite, TikTok star, and the spirit animal of Braves Country.</p>
         </div>
-        <div class="col-md-6 text-center">
+        <div class="col-md-6 order-md-1 text-center">
           <img src="images/blooper.webp" alt="Blooper the Mascot" class="img-fluid rounded blooper-img">
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="braves-pop-culture-section text-white py-5" id="braves-pop-culture">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-4 text-white">Braves in Pop Culture</h2>
+  
+      <!-- Movies & TV -->
+      <div class="category-card mb-4 p-4 rounded shadow">
+        <h4 class="fw-bold mb-3">🎬 Movies & TV</h4>
+      <div style="height: 6px; width: 350px; background-color: #CE1141; margin-bottom: 12px;"></div>
+      <ul class="text-dark">
+        <li><strong>The Slugger’s Wife (1985)</strong> – A Neil Simon comedy-drama featuring a fictional Braves slugger and scenes at Atlanta–Fulton County Stadium.</li>
+        <li><strong>Major League II (1994)</strong> – Braves’ old stadium stood in as the Cleveland Indians’ home field for several scenes.</li>
+        <li><strong>The Office (S5 Ep23)</strong> – Ryan wears a retro Braves cap at the bowling alley.</li>
+        <li><strong>The Walking Dead</strong> – Braves gear pops up in scenes, thanks to Georgia filming locations.</li>
+        <li><strong>Cobra Kai</strong> – Braves memorabilia is sprinkled into scenes as a nod to ATL roots.</li>
+      </ul>
+      </div>
+  
+      <!-- Music -->
+      <div class="category-card mb-4 p-4 rounded shadow">
+        <h4 class="fw-bold mb-3">🎵 Music</h4>
+      <div style="height: 6px; width: 350px; background-color: #CE1141; margin-bottom: 12px;"></div>
+      <ul class="text-dark">
+        <li><strong>Morgan Wallen – “’98 Braves” (2023)</strong> – A heartbreak anthem comparing a breakup to the Braves' 1998 postseason loss.</li>
+        <li><strong>Ludacris – “Welcome to Atlanta”</strong> – A hometown anthem repping the Braves alongside other ATL icons.</li>
+        <li><strong>Migos, Outkast, Future</strong> – All these Atlanta artists rock Braves gear, embedding the team into Atlanta's music culture.</li>
+        <li><strong>Jason Aldean – “1994”</strong> – Drops references to Chipper Jones and the Braves.</li>
+        <li><strong>Take Me Out to the Ballgame (Braves Remix)</strong> – ATL artists remixing the classic during playoff hype seasons.</li>
+      </ul>
+      </div>
+  
+      <!-- Memes & Internet -->
+      <div class="category-card mb-4 p-4 rounded shadow">
+        <h4 class="fw-bold mb-3">📱 Memes & Internet Culture</h4>
+      <div style="height: 6px; width: 350px; background-color: #CE1141; margin-bottom: 12px;"></div>
+      <ul class="text-dark">
+        <li><strong>Blooper the Mascot</strong> – A viral legend. Whether he’s failing flips, dance-battling fans, or doing back alley shenanigans – Blooper <em>is</em> Braves meme culture.</li>
+        <li><strong>“The Braves Just Won the World Series” (2021)</strong> – Sparked a viral meme format across Twitter and TikTok, used for humorously celebrating long-awaited wins.</li>
+        <li><strong>Braves Twitter</strong> – Chaotic good. Known for trolling rivals (looking at you, Mets), rain delay antics, and playoff rally energy. #ForTheA</li>
+        <li><strong>“For the A”</strong> – Originally a slogan, now a lifestyle. Spawned merch, GIFs, memes, and even tattoos.</li>
+        <li><strong>Helmet Flip TikToks</strong> – Fans recreate Travis d’Arnaud’s helmet fall mid-swing in viral trends.</li>
+      </ul>
+      </div>
+  
+      <!-- Celebrities & Fashion -->
+      <div class="category-card mb-4 p-4 rounded shadow">
+        <h4 class="fw-bold mb-3">🌟 Fashion & Celebrity Fans</h4>
+      <div style="height: 6px; width: 350px; background-color: #CE1141; margin-bottom: 12px;"></div>
+      <ul class="text-dark">
+        <li><strong>Kanye West, Drake, Rihanna, Jay-Z</strong> – All spotted wearing the iconic “A” cap, often a vintage or throwback navy-and-red style.</li>
+        <li><strong>Donald Glover (Childish Gambino)</strong> – Reps the Braves often, tying his ATL roots into interviews and performances.</li>
+        <li><strong>Zendaya & Tom Holland</strong> – Went viral attending a Braves game during the <em>Spider-Man: No Way Home</em> tour.</li>
+      </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="furry-friends-section py-5 bg-light">
+    <div class="container">
+      <h2 class="fw-bold mb-4 text-center">Furry Friends of Braves Country</h2>
+      <div class="row align-items-center">
+        
+        <!-- Collage -->
+        <div class="col-md-6 position-relative collage-container">
+          <img src="images/pet1.jpg" class="pet-img img1">
+          <img src="images/pet2.jpg" class="pet-img img2">
+          <img src="images/pet3.jpg" class="pet-img img3">
+          <img src="images/pet4.jpg" class="pet-img img4">
+          <!-- Add more as needed -->
+        </div>
+  
+        <!-- Text -->
+        <div class="col-md-6">
+          <p class="lead">From dugout dogs to clubhouse cats, the Braves love their furry companions. These four-legged friends bring joy, comfort, and championship energy to Braves Country. Whether it's pre-game cuddles or locker room cameos, our players’ pets are part of the team.</p>
+          <a href="https://www.mlbshop.com/pets/braves" class="btn btn-danger mt-3" target="_blank">Shop Braves Pet Gear</a>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 bg-light">
+    <div class="container d-md-flex align-items-center gap-5">
+      <img src="images/snitbear.jpg" alt="Snitbear" class="img-fluid rounded mb-4 mb-md-0" style="max-width: 300px;">
+      <div>
+        <h4 class="fw-bold">Honorable Mention: Snitbear</h4>
+        <div style="height: 6px; width: 200px; background-color: #CE1141;" class="mb-3"></div>
+        <p>A plush bear with a coaching legacy, Snitbear became a clubhouse icon during the 2021 World Series run. The players brought him everywhere — even Ozuna gave him a chain. He’s a fan favorite and the unofficial team hype man (or bear).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 bg-light">
+    <div class="container d-md-flex align-items-center gap-5">
+      <img src="images/ozziefoundation.jpg" alt="Ozzie Albies Foundation" class="img-fluid rounded mb-4 mb-md-0" style="max-width: 300px;">
+      <div>
+        <h4 class="fw-bold">Ozzie Albies Foundation</h4>
+        <div style="height: 6px; width: 200px; background-color: #CE1141;" class="mb-3"></div>
+        <p>Founded by Braves star Ozzie Albies, this foundation supports animal rescues, no-kill shelters, and adoption services. Ozzie’s love for animals extends far beyond the field—his goal is to make every furry friend feel safe and loved.</p>
+        <a href="https://ozziealbiesfoundation.org/" class="btn btn-dark mt-2" target="_blank">Visit Foundation Website</a>
       </div>
     </div>
   </section>
