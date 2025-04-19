@@ -141,28 +141,36 @@ body {
   background-color: #007aff;
   color: white;
 }
-.fan-pic {
-  height: 180px;
-  width: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+
+.fans-carousel-section {
+  background-color: #13274F;
+  overflow-x: hidden;
+  position: relative;
+  padding: 3rem 0;
 }
 
-.carousel-track-wrapper {
-  width: 100%;
+.carousel-container {
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
 .carousel-track {
   display: flex;
-  animation: scrollFanWall 40s linear infinite;
+  animation: scroll-left 60s linear infinite;
+  width: max-content;
 }
 
-@keyframes scrollFanWall {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.carousel-img {
+  height: 200px;
+  width: auto;
+  flex-shrink: 0;
+  margin-right: 16px;
+  border-radius: 10px;
+  object-fit: cover;
 }
+
   </style>
 </head>
 <body class="bg-light">
@@ -199,16 +207,16 @@ body {
     </div>
   </section>
 
-  <section id="bravesQuiz" class="d-flex flex-column align-items-center my-5">
+  <section id="bravesQuiz" class="d-flex flex-column align-items-center my-5" style="background-color: #13274F; padding: 3rem 1rem; color: white;">
     <h2 class="fw-bold text-center mb-4">Which Braves Player Are You?</h2>
     <div class="quiz-card card shadow rounded p-4" style="max-width: 500px; width: 100%;">
-      <div id="questionText" class="fw-bold fs-5 mb-3">Loading...</div>
+      <div id="questionText" class="fw-bold fs-5 mb-3" style="color: black;">Loading...</div>
       <div id="answerOptions" class="d-grid gap-2"></div>
       <button id="nextBtn" class="btn btn-primary mt-3 d-none">Next</button>
     </div>
     <div id="resultCard" class="card shadow rounded p-4 mt-4 text-center d-none" style="max-width: 500px;">
       <img id="playerImage" src="" class="img-fluid rounded mb-3" alt="Player" />
-      <h4 id="playerName" class="fw-bold mb-2"></h4>
+      <h4 id="playerName" class="fw-bold mb-2" style="color: black;"></h4>
       <p class="text-muted">Share your result:</p>
       <div class="mb-2">
         <a id="shareBtn" target="_blank" class="share-btn twitter"><i class="bi bi-twitter"></i> Share on Twitter</a>
@@ -229,26 +237,41 @@ body {
 
   <section id="fan-submission" class="py-5">
     <div class="container">
-      <h2 class="fw-bold text-center mb-4">Fan Submission Wall</h2>
-      <p class="text-center">Upload your photo in Braves gear or from a Braves game and be featured on our wall!</p>
-      <p class="text-center">Once reviewed and approved, they will be visible on our website.</p>
+      <h2 class="fw-bold text-center mb-4">Upload Your Braves Photos!</h2>
+      <p class="text-center">Wearing Braves gear? At a Braves game? Share the moment with us to be featured on our wall!</p>
+      <p class="text-center">Once reviewed and approved, they will be visible below.</p>
 
       <div class="d-flex justify-content-center">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdhXIPLFj97oyQUfQUu3RTdGD4TmYwq1yLG54fMmE5n72eoWQ/viewform?usp=dialog" width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        <iframe data-tally-src="https://tally.so/embed/walV4E?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="259" frameborder="0" marginheight="0" marginwidth="0" title="Braves Fan Wall Submission"></iframe>
       </div>
     </div>
     </section>
 
-    <section class="pt-5" style="background-color: #13274F;">
-      <div class="container">
-        <h3 class="fw-bold text-white text-center mb-4">Fan Spotlight Gallery</h3>
-        <div class="carousel-container">
-          <div class="carousel-track">
-            <img src="images/fan1.jpg" class="carousel-img" alt="Fan 1">
-            <img src="images/fan2.jpg" class="carousel-img" alt="Fan 2">
-            <img src="images/fan3.jpg" class="carousel-img" alt="Fan 3">
-            <!-- Add more images -->
-          </div>
+    <section class="fans-carousel-section">
+      <h3 class="fw-bold text-white text-center mb-4">Fan Spotlight Wall</h3>
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <img src="images/fans1.jpg" alt="Fans 1" class="carousel-img">
+          <img src="images/fans2.jpg" alt="Fans 2" class="carousel-img">
+          <img src="images/fans3.jpeg" alt="Fans 3" class="carousel-img">
+          <img src="images/fans4.jpg" alt="Fans 4" class="carousel-img">
+          <img src="images/fans6.webp" alt="Fans 6" class="carousel-img">
+          <img src="images/fans11.webp" alt="Fans 11" class="carousel-img">
+          <img src="images/fans12.jpg" alt="Fans 12" class="carousel-img">
+          <img src="images/fans13.jpg" alt="Fans 13" class="carousel-img">
+          <img src="images/fans14.jpeg" alt="Fans 14" class="carousel-img">
+          <img src="images/fans15.jpg" alt="Fans 15" class="carousel-img">
+          <!-- Duplicated -->
+          <img src="images/fans1.jpg" alt="Fans 1" class="carousel-img">
+          <img src="images/fans2.jpg" alt="Fans 2" class="carousel-img">
+          <img src="images/fans3.jpeg" alt="Fans 3" class="carousel-img">
+          <img src="images/fans4.jpg" alt="Fans 4" class="carousel-img">
+          <img src="images/fans6.webp" alt="Fans 6" class="carousel-img">
+          <img src="images/fans11.webp" alt="Fans 11" class="carousel-img">
+          <img src="images/fans12.jpg" alt="Fans 12" class="carousel-img">
+          <img src="images/fans13.jpg" alt="Fans 13" class="carousel-img">
+          <img src="images/fans14.jpeg" alt="Fans 14" class="carousel-img">
+          <img src="images/fans15.jpg" alt="Fans 15" class="carousel-img">
         </div>
       </div>
     </section>
@@ -287,39 +310,69 @@ body {
         question: "Pick a pregame hype song:",
         answers: [
           { text: "Eye of the Tiger", value: "strider" },
-          { text: "Dancing Queen", value: "ozzie" },
-          { text: "Uptown Funk", value: "riley" },
-          { text: "Bohemian Rhapsody", value: "murphy" },
-          { text: "Mr. Brightside", value: "olson" }
+          { text: "Fireball – Pitbull", value: "ozuna" },
+          { text: "Spin You Around – Morgan Wallen", value: "riley" },
+          { text: "Gasolina – Daddy Yankee", value: "acuña" },
+          { text: "Freestyle – Lil Baby", value: "olson" }
         ]
       },
       {
         question: "Pick a food at Truist Park:",
         answers: [
           { text: "Fried Chicken Sandwich", value: "riley" },
-          { text: "Ice Cream in a Helmet", value: "ozzie" },
-          { text: "Burgers and Fried", value: "olson" },
-          { text: "Nachos", value: "murphy" },
-          { text: "Arepas", value: "strider" }
+          { text: "Ice Cream in a Helmet", value: "ozuna" },
+          { text: "Loaded Nachos", value: "olson" },
+          { text: "Tacos", value: "acuña" },
+          { text: "Burger and Fries", value: "strider" }
+        ]
+      },
+      {
+        question: "Pick a game-day fit:",
+        answers: [
+          { text: "Something practical with a lucky hat", value: "strider" },
+          { text: "Braves jersey + gold chain + flair", value: "ozuna" },
+          { text: "Head-to-toe merch, face paint optional", value: "acuña" },
+          { text: "Something clean, classic, and minimal", value: "olson" },
+          { text: "Jersey and jeans, simple but reppin’", value: "riley" }
+        ]
+      },
+      {
+        question: "Pick a go-to move during a big Braves moment:",
+        answers: [
+          { text: "Analyze the play and explain why it was brilliant", value: "strider" },
+          { text: "Jump around and hype up everyone", value: "ozuna" },
+          { text: "Throw up the chop and scream", value: "acuña" },
+          { text: "Stand up and fist pump, of course", value: "olson" },
+          { text: "Record it for the memories", value: "riley" }
         ]
       },
       {
         question: "Pick a vibe:",
         answers: [
-          { text: "Quiet, laser focused", value: "strider" },
-          { text: "Team motivator", value: "ozzie" },
-          { text: "Confident and stylish", value: "riley" },
-          { text: "Lowkey and chill", value: "murphy" },
-          { text: "Explosive energy", value: "olson" }
+          { text: "Quiet, laser focused, dedicated", value: "strider" },
+          { text: "Team motivator, loud, funny", value: "ozuna" },
+          { text: "Confident, bold, stylish", value: "acuña" },
+          { text: "Calm, consistent, chill", value: "olson" },
+          { text: "Humble, hardworking, dependable", value: "riley" }
+        ]
+      },
+      {
+        question: "Pick a day-off activity:",
+        answers: [
+          { text: "Hitting the gym and listening to music", value: "strider" },
+          { text: "Hanging with family and dancing around the house", value: "ozuna" },
+          { text: "Shopping and showing off your fit", value: "acuña" },
+          { text: "Being outdoors and golfing", value: "olson" },
+          { text: "Going hunting and grilling for the family", value: "riley" }
         ]
       }
     ];
   
     const playerProfiles = {
       strider: { name: "Spencer Strider", image: "images/strider.jpg" },
-      ozzie: { name: "Ronald Acuña Jr.", image: "images/acuña.jpg" },
+      acuña: { name: "Ronald Acuña Jr.", image: "images/acuña.jpg" },
       riley: { name: "Austin Riley", image: "images/riley.jpeg" },
-      murphy: { name: "Marcell Ozuna", image: "images/ozuna.jpg" },
+      ozuna: { name: "Marcell Ozuna", image: "images/ozuna.jpg" },
       olson: { name: "Matt Olson", image: "images/olson.jpg" }
     };
   
@@ -404,6 +457,29 @@ document.getElementById("shareBtn").href =
     // Simulate submission confirmation
     document.getElementById("submissionMessage").style.display = "block";
     this.reset();
+  });
+</script>
+
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+
+<script>
+  window.addEventListener('load', () => {
+    const track = document.querySelector('.carousel-track');
+    const totalWidth = track.scrollWidth / 2; // Width of one image set
+    track.style.animation = `scroll-left 60s linear infinite`;
+
+    const styleSheet = document.createElement('style');
+    styleSheet.innerHTML = `
+      @keyframes scroll-left {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-${totalWidth}px);
+        }
+      }
+    `;
+    document.head.appendChild(styleSheet);
   });
 </script>
 
