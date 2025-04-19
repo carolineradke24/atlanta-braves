@@ -9,8 +9,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"/>
-
   <style>
     :root {
       --bs-primary: #CE1141; /* Braves Red */
@@ -81,63 +79,42 @@ body {
 .footer .social-icons a:hover {
   color: #CE1141 !important;
 }
+#quizResult {
+    animation: fadeIn 1s ease-in-out;
+  }
 
-.builder-container {
-      text-align: center;
-    }
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
 
-    .controls {
-      margin: 1rem 0;
-    }
+  .quiz-card {
+  display: none;
+  animation: fadeIn 0.4s ease-in-out;
+}
 
-    .jersey-container {
-      position: relative;
-      display: inline-block;
-      margin-top: 2rem;
-    }
+.quiz-card.active {
+  display: block;
+}
 
-    #jersey-image {
-      width: 300px;
-      height: auto;
-    }
+.hidden {
+  display: none;
+}
 
-    .name-arc {
-      position: absolute;
-      top: 13%;
-      left: 50%;
-      width: 200px;
-      height: 100px;
-      transform: translateX(-50%);
-      pointer-events: none;
-    }
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
 
-    .name-arc text {
-      fill: black;
-      font-size: 14px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    #number-text {
-      position: absolute;
-      top: 72%;
-      left: 53%;
-      transform: translate(-50%, -50%);
-      font-size: 22px;
-      font-weight: bold;
-      color: black;
-      pointer-events: none;
-    }
-
-    select, input {
-      font-size: 1rem;
-      padding: 0.4rem 0.6rem;
-      margin: 0 0.5rem;
-    }
-
-    label {
-      margin-right: 0.4rem;
-    }
+.answer {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #CE1141;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
   </style>
 </head>
 <body class="bg-light">
@@ -164,30 +141,30 @@ body {
     </div>
   </nav>
 
-  <div class="jersey-builder text-center my-5">
-    <h2 class="fw-bold mb-4">Design Your Own Braves Jersey</h2>
-  
-    <div class="d-flex justify-content-center align-items-center flex-wrap gap-3 mb-3">
-      <select id="colorway" class="form-select w-auto">
-        <option value="white">White</option>
-        <option value="navy">Navy</option>
-        <option value="gray">Gray</option>
-        <option value="red">Red</option>
-        <option value="city">City Connect</option>
-      </select>
-      <label for="nameInput" class="fw-bold">Name:</label>
-      <input id="nameInput" type="text" placeholder="YOUR NAME" class="form-control w-auto">
-      <label for="numberInput" class="fw-bold">Number:</label>
-      <input id="numberInput" type="text" placeholder="00" class="form-control w-auto">
+  <section class="braves-playlist-section py-5 text-center bg-light">
+    <div class="container">
+      <h2 class="fw-bold mb-3">Songs of Braves Country</h2>
+      <p class="mb-4">Stadium anthems, player walk-up songs, and classic ATL vibes to hype you up.</p>
+      <div class="spotify-embed">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/7d7ZfXfPP47uDUKDBvReSQ?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
     </div>
-  
-    <div class="jersey-display position-relative d-inline-block">
-      <img id="jerseyImage" src="images/jersey-white.jpg" alt="Fan Jersey" class="img-fluid">
-      <div id="jerseyName" class="jersey-text jersey-name">YOUR NAME</div>
-      <div id="jerseyNumber" class="jersey-text jersey-number">00</div>
-    </div>
-  </div>
+  </section>
 
+  <section id="bravesQuiz" class="d-flex flex-column align-items-center my-5">
+    <h2 class="fw-bold text-center mb-4">Which Braves Player Are You?</h2>
+    <div class="quiz-card card shadow rounded p-4" style="max-width: 500px; width: 100%;">
+      <div id="questionText" class="fw-bold fs-5 mb-3">Loading...</div>
+      <div id="answerOptions" class="d-grid gap-2"></div>
+      <button id="nextBtn" class="btn btn-primary mt-3 d-none">Next</button>
+    </div>
+    <div id="resultCard" class="card shadow rounded p-4 mt-4 text-center d-none" style="max-width: 500px;">
+      <img id="playerImage" src="" class="img-fluid rounded mb-3" alt="Player" />
+      <h4 id="playerName" class="fw-bold mb-2"></h4>
+      <p class="text-muted">Share your result:</p>
+      <a id="shareBtn" class="btn btn-outline-primary" target="_blank">Tweet Your Result</a>
+    </div>
+  </section>
 
   
   <!-- Footer -->
@@ -219,32 +196,98 @@ body {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    const colorway = document.getElementById("colorway");
-    const jerseyImage = document.getElementById("jerseyImage");
-    const nameInput = document.getElementById("nameInput");
-    const numberInput = document.getElementById("numberInput");
-    const jerseyName = document.getElementById("jerseyName");
-    const jerseyNumber = document.getElementById("jerseyNumber");
+    const quizData = [
+      {
+        question: "Pick a pregame hype song:",
+        answers: [
+          { text: "Eye of the Tiger", value: "strider" },
+          { text: "Dancing Queen", value: "ozzie" },
+          { text: "Uptown Funk", value: "riley" },
+          { text: "Bohemian Rhapsody", value: "murphy" },
+          { text: "Mr. Brightside", value: "olson" }
+        ]
+      },
+      {
+        question: "Pick a food at Truist Park:",
+        answers: [
+          { text: "Fried Chicken Sandwich", value: "riley" },
+          { text: "Ice Cream in a Helmet", value: "ozzie" },
+          { text: "Burgers and Fries", value: "olson" },
+          { text: "Nachos", value: "murphy" },
+          { text: "Arepas", value: "strider" }
+        ]
+      },
+      {
+        question: "Pick a vibe:",
+        answers: [
+          { text: "Quiet, laser focused", value: "strider" },
+          { text: "Team motivator", value: "ozzie" },
+          { text: "Confident and stylish", value: "riley" },
+          { text: "Lowkey and chill", value: "murphy" },
+          { text: "Explosive energy", value: "olson" }
+        ]
+      }
+    ];
   
-    colorway.addEventListener("change", () => {
-      const value = colorway.value;
-      const jerseyMap = {
-        white: "jersey-white.jpg",
-        navy: "jersey-navy.jpg",
-        gray: "jersey-gray.jpg",
-        red: "jersey-red.jpg",
-        city: "jersey-city.jpg"
-      };
-      jerseyImage.src = `images/${jerseyMap[value]}`;
+    const playerProfiles = {
+      strider: { name: "Spencer Strider", image: "images/strider.png" },
+      ozzie: { name: "Ozzie Albies", image: "images/ozzie.png" },
+      riley: { name: "Austin Riley", image: "images/riley.png" },
+      murphy: { name: "Sean Murphy", image: "images/murphy.png" },
+      olson: { name: "Matt Olson", image: "images/olson.png" }
+    };
+  
+    let currentQuestion = 0;
+    let results = {};
+    const questionText = document.getElementById("questionText");
+    const answerOptions = document.getElementById("answerOptions");
+    const nextBtn = document.getElementById("nextBtn");
+    const resultCard = document.getElementById("resultCard");
+  
+    function loadQuestion() {
+      const q = quizData[currentQuestion];
+      questionText.textContent = q.question;
+      answerOptions.innerHTML = "";
+      nextBtn.classList.add("d-none");
+  
+      q.answers.forEach(ans => {
+        const btn = document.createElement("button");
+        btn.className = "btn btn-outline-danger";
+        btn.textContent = ans.text;
+        btn.onclick = () => {
+          results[ans.value] = (results[ans.value] || 0) + 1;
+          nextBtn.click();
+        };
+        answerOptions.appendChild(btn);
+      });
+    }
+  
+    nextBtn.addEventListener("click", () => {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        showResult();
+      }
     });
   
-    nameInput.addEventListener("input", () => {
-      jerseyName.textContent = nameInput.value.toUpperCase() || "YOUR NAME";
-    });
+    function showResult() {
+      document.querySelector(".quiz-card").classList.add("d-none");
+      resultCard.classList.remove("d-none");
   
-    numberInput.addEventListener("input", () => {
-      jerseyNumber.textContent = numberInput.value || "00";
-    });
+      const topResult = Object.entries(results).reduce((a, b) => (a[1] > b[1] ? a : b))[0];
+      const profile = playerProfiles[topResult];
+  
+      document.getElementById("playerName").textContent = profile.name;
+      document.getElementById("playerImage").src = profile.image;
+      document.getElementById("shareBtn").href = `https://twitter.com/intent/tweet?text=I%20got%20${encodeURIComponent(profile.name)}%20on%20the%20Braves%20Player%20Quiz!%20%23ForTheA`;
+  
+      // Optional animation
+      resultCard.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 600, fill: 'forwards' });
+    }
+  
+    // Initialize
+    loadQuestion();
   </script>
 
 </body>
