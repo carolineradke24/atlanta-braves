@@ -80,6 +80,46 @@ body {
   color: #CE1141 !important;
 }
 
+.flip-box {
+  background-color: transparent;
+  width: 100%;
+  height: 150px;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  backface-visibility: hidden;
+  padding: 1rem;
+}
+
+.flip-box-front {
+  background-color: #CE1141;
+  color: white;
+}
+
+.flip-box-back {
+  background-color: #ffffff;
+  color: #000;
+  transform: rotateY(180deg);
+  border: 1px solid #dee2e6;
+}
   </style>
 </head>
 <body class="bg-light">
@@ -105,6 +145,218 @@ body {
       </div>
     </div>
   </nav>
+
+  <section class="py-5 text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Contact Us</h2>
+      <p class="mb-4">Have questions, feedback, or want to say hi? We'd love to hear from you!</p>
+      <div class="form-wrapper mx-auto" style="max-width: 800px;">
+      <form id="contactForm">
+        <div class="mb-3">
+          <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+        </div>
+        <div class="mb-3">
+          <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+        </div>
+        <div class="mb-3">
+          <textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger">Send Message</button>
+      </form>
+      
+      <div id="thankYouMessage" class="mt-4 alert alert-success d-none">
+        Thank you! Your message has been sent.
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section class="py-5 bg-light">
+    <div class="container">
+  
+      <!-- Section Title & Description -->
+      <h2 class="fw-bold mb-4 text-center">Truist Park Information</h2>
+      <p class="mb-5 text-muted text-center">Truist Park blends classic charm, modern features, and southern hospitality to deliver a one-of-a-kind fan experience. Its intimate 41,000-seat design ensures great views from every spot.</p>
+  
+      <!-- MLB Ballpark App -->
+      <div class="mt-5">
+        <div style="height: 6px; width: 200px; background-color: #CE1141; margin-bottom: 12px;"></div>
+        <h4 class="fw-bold text-dark">Download the MLB Ballpark App</h4>
+      </div>
+        <div class="row align-items-center">
+          <div class="col-md-2 text-center mb-3 mb-md-0">
+            <img src="images/mlbapp.png" alt="MLB App Logo" class="img-fluid" style="max-height: 80px;">
+          </div>
+          <div class="col-md-10">
+            <p class="text-muted">
+              The MLB Ballpark app is your mobile companion when visiting your favorite Major League Baseball ballparks. The official MLB Ballpark application perfectly complements and personalizes your trip with digital ticketing functionality, mobile check-in, special offers, rewards and exclusive content.
+            </p>
+            <a href="https://www.mlb.com/braves/apps/ballpark" target="_blank" class="btn btn-outline-danger">Learn More</a>
+          </div>
+      </div>
+  
+      <!-- Directions & Transit Info -->
+      <div class="mt-5">
+        <div style="height: 6px; width: 200px; background-color: #CE1141; margin-bottom: 12px;"></div>
+        <h4 class="fw-bold text-dark">How to Get to Truist Park</h4>
+      </div>
+        <p class="text-muted">
+          Truist Park is located 10 miles northwest of downtown Atlanta in the Cumberland neighborhood of Cobb County. The best way to get to Truist Park is to plan ahead, arrive early and consider all the transportation options available to you.
+        </p>
+        <p class="mb-4">
+          <strong>Truist Park</strong><br>
+          755 Battery Avenue Southeast<br>
+          Atlanta, GA 30339
+          <a href="https://maps.google.com/?q=755+Battery+Avenue+Southeast+Atlanta,+GA+30339" target="_blank" class="ms-2 text-danger">
+            <i class="bi bi-geo-alt-fill"></i>
+          </a>
+        </p>
+  
+        <!-- Flip Boxes -->
+      <div class="category-card mb-4 p-4 rounded shadow">
+        <h4 class="fw-bold mb-3">Parking Information</h4>
+        <p>We strongly recommend pre-purchasing game day parking. Before you purchase, please review the parking map for lot details, including opening times specific to each lot.<br /><strong>Parking is based on availability and only available for purchase up until first pitch for any given day.</strong></p>
+        <a href="https://www.mlb.com/braves/ballpark/transportation/parking/pricing" target="_blank" class="btn btn-outline-danger">View Pricing</a>
+        <a href="https://www.mlb.com/braves/ballpark/transportation/parking/hours" target="_blank" class="btn btn-outline-danger">View Hours</a>
+        <a href="https://mktg.mlbstatic.com/braves/documents/atlanta_braves_parking_map.pdf" target="_blank" class="btn btn-outline-danger">Download Parking Map (.pdf)</a>
+        <br />
+        <br />
+        <p><strong>Other Vehicles:</strong></p>
+        <ul class="text-dark">
+          <li><strong>Motorcycles:</strong> Guests riding motorcycles can purchase a parking permit in any of our Braves owned or managed lot.</li>
+          <li><strong>Bicycles:</strong> Guests arriving via bicycle can utilize our bicycle parking racks located in front of the Coca-Cola Roxy and outside of the Silver Deck on Circle 75 Parkway.</li>
+          <li><strong>Bus/Oversized Vehicles:</strong> Oversized vehicle parking permits are based on availability and must be purchased in advance. 15 Passenger vans ($50 per vehicle) and RV’s ($75 per vehicle) can park in Lot 29. Bus parking permits range from $50 to $75 per vehicle, depending on the size. Only those with an official Atlanta Braves bus parking permit and Dash Pass, provided by your group representative, will be allowed to park in our designated bus parking areas. Specific parking passes for all oversized vehicles must be secured in advance by contacting your group representative or by calling 404-577-9100.</li>
+          <li><strong>Electric Vehicle (EV) Charging Stations:</strong> The Atlanta Braves and The Battery Atlanta have partnered with Georgia Power and FLASH Parking to provide EV Charging Stations within the Battery Atlanta for Braves home games. Charging stations are subject to availability and available at Battery Red Deck, Battery Delta Deck (limited to parking permit holders on gamedays), Battery Orange Deck (limited to parking permit holders on gamedays), Battery Green Deck (limited to parking permit holders on gamedays), Battery Purple Deck, Battery Silver Deck (limited to parking permit holders on gamedays)</li>
+        </ul>
+      </div>
+
+      <div class="category-card mb-4 p-4 rounded shadow">
+        <h4 class="fw-bold mb-3">Public Transportation</h4>
+        <p>Truist Park features a host of alternative transportation options designed to best suit the needs of any Braves fan.</p>
+        <br />
+        <p><strong>CobbLinc:</strong></p>
+        <ul class="text-dark">
+          <li><strong>Around the Cumberland Area:</strong> Take the Circulator Blue or Circulator Green. Both travel directly to The Battery Atlanta & Truist Park and are free of charge.</li>
+          <li><strong>From the Marietta Park and Ride Lot:</strong> Take CobbLinc's Route 10 to the bus stop located at Cobb Parkway and Cumberland Parkway. From this stop, it will be about a 10-minute walk (approximately 0.5 miles) to the stadium. Walk south on Cobb Parkway and turn left onto Windy Ridge Parkway. Continue walking east along Windy Ridge Parkway to The Battery Atlanta and Truist Park.</li>
+          <li><strong>From MARTA's Arts Center:</strong> Take the CobbLinc Route 10 <em>(note: does not run on Sundays)</em> to the bus stop located at Cobb Parkway and Windy Ridge Parkway. It will be about a 7-minute walk (approximately 0.3 miles) to the stadium. Walk south on Cobb Parkway and turn left onto Windy Ridge Parkway. Continue walking along east Windy Ridge Parkway to The Battery Atlanta and Truist Park.</li>
+        </ul>
+        <p><strong>Hopper:</strong></p>
+        <ul class="text-dark">
+          <li>The Hopper is an autonomous shuttle pilot program connecting Truist Park and the Battery Atlanta with the Cobb Galleria Centre. On select game days, the Cumberland Hopper will provide complimentary shuttle service via the I-285 Transit and Pedestrian Bridge.</li>
+          <li>
+            For more information on the pilot program, as well as schedules and locations, please visit 
+            <a href="https://cumberlandsweep.org/" target="_blank" rel="noopener">https://cumberlandsweep.org/</a>.
+          </li>
+        </ul>
+        <p><strong>MARTA:</strong></p>
+        <ul class="text-dark">
+          <li>You may board MARTA Bus 12 at the Midtown MARTA Station that travels to Cumberland Mall. Once you have arrived at the Cumberland Mall Transfer Center - please take the Cumberland Circular Shuttle (either blue or green route) to reach The Battery Atlanta & Truist Park.</li>
+        </ul>
+        <img src="images/martamap.jpg" alt="MARTA Map" class="img-fluid" style="max-height: 80px;">
+        <br />
+        <a href="https://mktg.mlbstatic.com/braves/documents/y2023/atlanta_braves_public_transportation_map.pdf" target="_blank" class="btn btn-outline-danger">Download Map (.pdf)</a>
+      </div>
+  
+      <!-- Memes & Internet -->
+      <div class="category-card mb-4 p-4 rounded shadow">
+        <h4 class="fw-bold mb-3">📱 Memes & Internet Culture</h4>
+      <div style="height: 6px; width: 350px; background-color: #CE1141; margin-bottom: 12px;"></div>
+      <ul class="text-dark">
+        <li><strong>Blooper the Mascot</strong> – A viral legend. Whether he’s failing flips, dance-battling fans, or doing back alley shenanigans – Blooper <em>is</em> Braves meme culture.</li>
+        <li><strong>“The Braves Just Won the World Series” (2021)</strong> – Sparked a viral meme format across Twitter and TikTok, used for humorously celebrating long-awaited wins.</li>
+        <li><strong>Braves Twitter</strong> – Chaotic good. Known for trolling rivals (looking at you, Mets), rain delay antics, and playoff rally energy. #ForTheA</li>
+        <li><strong>“For the A”</strong> – Originally a slogan, now a lifestyle. Spawned merch, GIFs, memes, and even tattoos.</li>
+        <li><strong>Helmet Flip TikToks</strong> – Fans recreate Travis d’Arnaud’s helmet fall mid-swing in viral trends.</li>
+      </ul>
+      </div>
+  
+      <!-- Celebrities & Fashion -->
+      <div class="category-card mb-4 p-4 rounded shadow">
+        <h4 class="fw-bold mb-3">🌟 Fashion & Celebrity Fans</h4>
+      <div style="height: 6px; width: 350px; background-color: #CE1141; margin-bottom: 12px;"></div>
+      <ul class="text-dark">
+        <li><strong>Kanye West, Drake, Rihanna, Jay-Z</strong> – All spotted wearing the iconic “A” cap, often a vintage or throwback navy-and-red style.</li>
+        <li><strong>Donald Glover (Childish Gambino)</strong> – Reps the Braves often, tying his ATL roots into interviews and performances.</li>
+        <li><strong>Zendaya & Tom Holland</strong> – Went viral attending a Braves game during the <em>Spider-Man: No Way Home</em> tour.</li>
+      </ul>
+      </div>
+    </div>
+
+
+
+          <div class="col-md-3">
+            <div class="flip-box">
+              <div class="flip-box-inner">
+                <div class="flip-box-front d-flex justify-content-center align-items-center bg-danger text-white fw-bold">Public Transportation</div>
+                <div class="flip-box-back p-3 text-dark bg-white">CobbLinc, MARTA and shuttle options are available with drop-offs near the stadium.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="flip-box">
+              <div class="flip-box-inner">
+                <div class="flip-box-front d-flex justify-content-center align-items-center bg-danger text-white fw-bold">Rideshare</div>
+                <div class="flip-box-back p-3 text-dark bg-white">Rideshare services drop off and pick up in the designated Uber Zone near Windy Ridge Pkwy.</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="flip-box">
+              <div class="flip-box-inner">
+                <div class="flip-box-front d-flex justify-content-center align-items-center bg-danger text-white fw-bold">Parking Codes of Conduct</div>
+                <div class="flip-box-back p-3 text-dark bg-white">Tailgating rules apply; loud music, open flames, and glass containers are restricted.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Seating Chart -->
+      <div class="mt-5">
+        <div style="height: 6px; width: 200px; background-color: #CE1141; margin-bottom: 12px;"></div>
+        <h4 class="fw-bold text-dark">Truist Park Seating Chart</h4>
+      </div>
+        <p class="text-muted mb-4">Truist Park opened in 2017 and features a mix of premium clubs, outfield pavilions, and classic ballpark seating. Whether you're behind home plate or catching homers in right field, every seat is part of the action!</p>
+        <img src="images/truist-seating-map.jpg" alt="Truist Park Seating Map" class="img-fluid rounded shadow d-block mx-auto" style="max-width: 800px;">
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-4">The Battery Atlanta</h2>
+      <p class="mb-4">Your pre-game (and post-game) destination for food, drinks, shopping, and fun.</p>
+      <img src="images/battery-map.jpg" alt="The Battery Map" class="img-fluid rounded shadow mb-3" style="max-width: 800px;">
+      <p class="text-muted">Located just outside Truist Park, The Battery is the place to be before first pitch and long after the game ends.</p>
+    </div>
+  </section>
+
+  <section class="py-5 bg-light text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Food Recs Near Truist Park</h2>
+      <ul class="list-group list-group-flush mx-auto" style="max-width: 600px;">
+        <li class="list-group-item">🍔 H&F Burger – Classic burger spot inside the park</li>
+        <li class="list-group-item">🌮 El Super Pan – Latin street food with flavor-packed tacos</li>
+        <li class="list-group-item">🍩 Sugar Shane’s – Fun sweet treats inside the Battery</li>
+        <li class="list-group-item">🍗 Terrapin Taproom – Wings, beer, and BBQ near the entrance</li>
+        <li class="list-group-item">🍕 Antico Pizza – Perfect for groups before the game</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-5 text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-4">Parking Tips</h2>
+      <p class="mb-3 text-muted">Avoid the last-minute rush and know where to park!</p>
+      <ul class="list-group list-group-flush mx-auto" style="max-width: 600px; text-align: left;">
+        <li class="list-group-item">🚗 Reserve your parking online ahead of time through the MLB Ballpark app.</li>
+        <li class="list-group-item">🅿️ Red Deck is closest to Truist Park and offers direct pedestrian access.</li>
+        <li class="list-group-item">⏱ Arrive 90 minutes early if you want to grab food or explore The Battery.</li>
+        <li class="list-group-item">💸 Some off-site lots offer cheaper pricing but may require a 10-minute walk.</li>
+        <li class="list-group-item">🚌 Rideshare pickup zones are near the Power Alley lot postgame.</li>
+      </ul>
+    </div>
+  </section>
 
   
   <!-- Footer -->
@@ -134,6 +386,35 @@ body {
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const form = document.getElementById('contactForm');
+    const thankYouMessage = document.getElementById('thankYouMessage');
+  
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault(); // prevent default browser submit
+  
+      const formData = new FormData(form);
+  
+      try {
+        const response = await fetch("https://formspree.io/f/xeoaygzp", {
+          method: "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+  
+        if (response.ok) {
+          form.reset();
+          thankYouMessage.classList.remove("d-none");
+        } else {
+          alert("Something went wrong. Please try again later.");
+        }
+      } catch (error) {
+        alert("There was an error. Please check your connection.");
+      }
+    });
+  </script>
 
 </body>
 </html>

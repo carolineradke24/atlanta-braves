@@ -171,6 +171,54 @@ body {
   object-fit: cover;
 }
 
+
+.fact-generator-section {
+  background-color: #f8f9fa;
+  padding: 2rem;
+}
+
+.fact-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* for small screens */
+}
+
+.tomahawk-img {
+  width: 150px;
+  margin-top: 40px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+  transform: rotate(-82deg);
+}
+.tomahawk-img.chop {
+  transform: rotate(40deg);
+}
+.fact-text {
+  font-size: 1.25rem;
+  max-width: 400px;
+  text-align: left;
+  padding-top: 60px;
+  min-height: 10rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767.98px) {
+  .fact-container {
+    flex-direction: column;
+  }
+
+  .fact-text {
+    margin-top: 3rem !important;
+    margin-left: 0 !important;
+    text-align: center;
+    min-height: 6rem; /* adjusts to accommodate 3 lines */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
   </style>
 </head>
 <body class="bg-light">
@@ -273,6 +321,16 @@ body {
           <img src="images/fans14.jpeg" alt="Fans 14" class="carousel-img">
           <img src="images/fans15.jpg" alt="Fans 15" class="carousel-img">
         </div>
+      </div>
+    </section>
+
+    <section class="fact-generator-section">
+      <h2 class="text-center fw-bold mb-4">Chop for a Braves Fun Fact</h2>
+      <div class="fact-container d-flex align-items-center justify-content-center flex-wrap flex-md-nowrap text-center">
+        <img src="images/tomahawkchop.png" id="tomahawk" alt="Tomahawk" class="tomahawk-img mb-3 mb-md-0">
+        <p id="factDisplay" class="fact-text fw-semibold ms-md-4 mt-3 mt-md-0">
+          Click the tomahawk to reveal a fun fact!
+        </p>
       </div>
     </section>
   
@@ -481,6 +539,64 @@ document.getElementById("shareBtn").href =
     `;
     document.head.appendChild(styleSheet);
   });
+</script>
+
+<script>
+  const facts = [
+    "The Braves are the oldest continuously operating professional baseball team in America.",
+    "The team was founded in 1871 as the Boston Red Stockings.",
+    "The team's mascot, Blooper, was introduced in 2018.",
+    "Truist Park opened in 2017 and seats over 41,000 fans.",
+    "The Braves were originally based in Boston and then Milwaukee before Atlanta.",
+    "Hank Aaron hit 755 home runs – most of them as a Brave.",
+    "The Braves won the World Series in 1995 and 2021.",
+    "Chipper Jones spent his entire 19-year MLB career with the Braves.",
+    "The famous 'Tomahawk Chop' chant started in the early 1990s.",
+    "The Braves were the first MLB team to televise their games nationally on TBS.",
+    "Atlanta hosted the MLB All-Star Game at Turner Field in 2000.",
+    "Greg Maddux, Tom Glavine, and John Smoltz all pitched for the Braves and are in the Hall of Fame.",
+    "The Braves won 14 straight division titles from 1991 to 2005 – the longest streak in MLB history.",
+    "Ronald Acuña Jr. became the youngest player in MLB history to hit a grand slam in the postseason.",
+    "In 1991, the Braves went from “worst to first,” winning the NL pennant after finishing last the year before.",
+    "The Braves were the first MLB team to wear feathered sleeves as part of their uniform in the 1970s.",
+    "The iconic “A” logo debuted in 1987 and has become a symbol of Atlanta pride.",
+    "Bobby Cox holds the MLB record for most career ejections as a manager – most of them with the Braves.",
+    "Eddie Rosario hit for the cycle in the 2021 NLCS – only the second player ever to do so in the playoffs.",
+    "Turner Field, the Braves’ home from 1997 to 2016, was originally built for the 1996 Summer Olympics.",
+    "The Braves were the first team in MLB history to hit four consecutive home runs in a single inning (2020).",
+    "The “Big Three” Braves pitchers — Maddux, Glavine, Smoltz — combined for over 800 wins.",
+    "Truist Park features “The Battery Atlanta” — a vibrant mixed-use district with food, bars, and live music."
+  ];
+
+  let factIndex = 0;
+  let shuffledFacts = shuffleFacts([...facts]);
+
+  const tomahawk = document.getElementById("tomahawk");
+  const factDisplay = document.getElementById("factDisplay");
+
+  tomahawk.addEventListener("click", () => {
+    factDisplay.textContent = shuffledFacts[factIndex];
+
+    tomahawk.classList.add("chop");
+
+    setTimeout(() => {
+      tomahawk.classList.remove("chop");
+    }, 400);
+
+    factIndex++;
+    if (factIndex >= shuffledFacts.length) {
+      shuffledFacts = shuffleFacts([...facts]);
+      factIndex = 0;
+    }
+  });
+
+  function shuffleFacts(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
 </script>
 
 
