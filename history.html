@@ -163,6 +163,28 @@ body {
   width: 25%;
   text-align: left;
 }
+.position-relative {
+  overflow: hidden;
+}
+
+.position-absolute {
+  border-radius: 4px;
+}
+.text-braves-red {
+  color: #CE1141;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.year-badge {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: #13274F; /* Braves navy */
+  color: white;
+  padding: 4px 10px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+}
   </style>
 </head>
 <body class="bg-light">
@@ -648,34 +670,365 @@ body {
       <h2 class="fw-bold text-center mb-4 text-uppercase">Braves Hall of Fame</h2>
       <div class="row g-4">
         <!-- Rico Carty -->
-        <div class="col-6 col-md-4 col-lg-3 text-center">
-          <h5 class="text-danger fw-bold text-uppercase">Rico Carty</h5>
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Rico Carty</strong></h5>
           <div class="position-relative">
             <img src="images/ricocarty.jpg" alt="Rico Carty" class="img-fluid rounded">
-            <span class="position-absolute bottom-0 start-0 bg-dark text-white px-2 py-1 small">2023</span>
+            <span class="year-badge"><strong>2023</strong></span>
           </div>
         </div>
   
         <!-- Fred Tenney -->
-        <div class="col-6 col-md-4 col-lg-3 text-center">
-          <h5 class="text-danger fw-bold text-uppercase">Fred Tenney</h5>
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Fred Tenney</strong></h5>
           <div class="position-relative">
             <img src="images/fredtenney.jpg" alt="Fred Tenney" class="img-fluid rounded">
-            <span class="position-absolute bottom-0 start-0 bg-dark text-white px-2 py-1 small">2023</span>
+            <span class="year-badge"><strong>2023</strong></span>
           </div>
         </div>
   
-        <!-- Repeat for others -->
         <!-- Joe Adcock -->
-        <div class="col-6 col-md-4 col-lg-3 text-center">
-          <h5 class="text-danger fw-bold text-uppercase">Joe Adcock</h5>
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Joe Adcock</strong></h5>
           <div class="position-relative">
             <img src="images/joeadcock.jpg" alt="Joe Adcock" class="img-fluid rounded">
-            <span class="position-absolute bottom-0 start-0 bg-dark text-white px-2 py-1 small">2022</span>
+            <span class="year-badge"><strong>2022</strong></span>
+          </div>
+        </div>
+
+        <!-- Leo Mazzone -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Leo Mazzone</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Leo Mazzone" class="img-fluid rounded">
+            <span class="year-badge"><strong>2022</strong></span>
+          </div>
+        </div>
+
+        <!-- Joe Torre -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Joe Torre</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Joe Torre" class="img-fluid rounded">
+            <span class="year-badge"><strong>2022</strong></span>
+          </div>
+        </div>
+
+        <!-- Terry Pendleton -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Terry Pendleton</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Terry" class="img-fluid rounded">
+            <span class="year-badge"><strong>2019</strong></span>
+          </div>
+        </div>
+
+        <!-- Hugh Duffy -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Hugh Duffy</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Hugh" class="img-fluid rounded">
+            <span class="year-badge"><strong>2019</strong></span>
+          </div>
+        </div>
+
+        <!-- Tim Hudson -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Tim Hudson</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Tim" class="img-fluid rounded">
+            <span class="year-badge"><strong>2018</strong></span>
+          </div>
+        </div>
+
+        <!-- Joe Simpson -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Joe Simpson</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Joe Simpson" class="img-fluid rounded">
+            <span class="year-badge"><strong>2018</strong></span>
+          </div>
+        </div>
+
+        <!-- Andruw Jones -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Andruw Jones</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Joe Torre" class="img-fluid rounded">
+            <span class="year-badge"><strong>2016</strong></span>
+          </div>
+        </div>
+
+        <!-- John Schuerholz -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>John Schuerholz</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="JohnS" class="img-fluid rounded">
+            <span class="year-badge"><strong>2016</strong></span>
+          </div>
+        </div>
+
+        <!-- Don Sutton -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Don Sutton</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Don" class="img-fluid rounded">
+            <span class="year-badge"><strong>2015</strong></span>
+          </div>
+        </div>
+
+        <!-- Javy Lopez -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Javy Lopez</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Javy" class="img-fluid rounded">
+            <span class="year-badge"><strong>2014</strong></span>
+          </div>
+        </div>
+
+        <!-- Rabbit Maranville -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Rabbit Maranville</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Rabbit" class="img-fluid rounded">
+            <span class="year-badge"><strong>2014</strong></span>
+          </div>
+        </div>
+
+        <!-- Dave Pursley -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Dave Pursley</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Dave" class="img-fluid rounded">
+            <span class="year-badge"><strong>2014</strong></span>
+          </div>
+        </div>
+
+        <!-- Chipper -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Chipper Jones</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Chipper" class="img-fluid rounded">
+            <span class="year-badge"><strong>2013</strong></span>
+          </div>
+        </div>
+
+        <!-- John Snoltz -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>John Smoltz</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="JohnSm" class="img-fluid rounded">
+            <span class="year-badge"><strong>2012</strong></span>
+          </div>
+        </div>
+
+        <!-- Bobby -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Bobby Cox</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Bobby" class="img-fluid rounded">
+            <span class="year-badge"><strong>2011</strong></span>
+          </div>
+        </div>
+
+        <!-- Tom Glavine -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Tom Glavine</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="TomGlav" class="img-fluid rounded">
+            <span class="year-badge"><strong>2010</strong></span>
+          </div>
+        </div>
+
+        <!-- Greg Madduz -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Greg Madduz</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Greg" class="img-fluid rounded">
+            <span class="year-badge"><strong>2009</strong></span>
+          </div>
+        </div>
+
+        <!-- David -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>David Justice</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="DavidJ" class="img-fluid rounded">
+            <span class="year-badge"><strong>2007</strong></span>
+          </div>
+        </div>
+
+        <!-- Ralph -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Ralph Garr</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Ralph" class="img-fluid rounded">
+            <span class="year-badge"><strong>2006</strong></span>
+          </div>
+        </div>
+
+        <!-- Bill Lucas -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Bill Lucas</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Bill" class="img-fluid rounded">
+            <span class="year-badge"><strong>2006</strong></span>
+          </div>
+        </div>
+
+        <!-- Herman -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Herman Long</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Herman" class="img-fluid rounded">
+            <span class="year-badge"><strong>2005</strong></span>
+          </div>
+        </div>
+
+        <!-- Paul -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Paul Snyder</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Paul" class="img-fluid rounded">
+            <span class="year-badge"><strong>2005</strong></span>
+          </div>
+        </div>
+
+        <!-- Skip -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Skip Caray</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Skip" class="img-fluid rounded">
+            <span class="year-badge"><strong>2004</strong></span>
+          </div>
+        </div>
+
+        <!-- Tommy -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Tommy Holmes</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Tommy" class="img-fluid rounded">
+            <span class="year-badge"><strong>2004</strong></span>
+          </div>
+        </div>
+
+        <!-- Kid -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Kid Nichols</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Kid" class="img-fluid rounded">
+            <span class="year-badge"><strong>2004</strong></span>
+          </div>
+        </div>
+
+        <!-- Pete -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Pete Van Wieren</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Pete" class="img-fluid rounded">
+            <span class="year-badge"><strong>2004</strong></span>
+          </div>
+        </div>
+
+        <!-- Del -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Del Crandall</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Del" class="img-fluid rounded">
+            <span class="year-badge"><strong>2003</strong></span>
+          </div>
+        </div>
+
+        <!-- Bill -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Bill Bartholomay</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Joe Torre" class="img-fluid rounded">
+            <span class="year-badge"><strong>2002</strong></span>
+          </div>
+        </div>
+
+        <!-- John Sain -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>John Sain</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="John Sain" class="img-fluid rounded">
+            <span class="year-badge"><strong>2002</strong></span>
+          </div>
+        </div>
+
+        <!-- Lew -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Lew Burdette</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Lew" class="img-fluid rounded">
+            <span class="year-badge"><strong>2001</strong></span>
+          </div>
+        </div>
+
+        <!-- Ernie -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Ernie Johnson</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Ernie" class="img-fluid rounded">
+            <span class="year-badge"><strong>2001</strong></span>
+          </div>
+        </div>
+
+        <!-- Dale -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Dale Murphy</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Dale" class="img-fluid rounded">
+            <span class="year-badge"><strong>2000</strong></span>
+          </div>
+        </div>
+
+        <!-- Ted -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Ted Turner</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Ted" class="img-fluid rounded">
+            <span class="year-badge"><strong>2000</strong></span>
+          </div>
+        </div>
+
+        <!-- Hank Aaron -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Hank Aaron</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Hank" class="img-fluid rounded">
+            <span class="year-badge"><strong>1999</strong></span>
+          </div>
+        </div>
+
+        <!-- Eddie Mathews -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Eddie Mathews</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Eddie" class="img-fluid rounded">
+            <span class="year-badge"><strong>1999</strong></span>
+          </div>
+        </div>
+
+        <!-- Phil -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Phil Niekro</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Phil" class="img-fluid rounded">
+            <span class="year-badge"><strong>1999</strong></span>
+          </div>
+        </div>
+
+        <!-- Warren Spahn -->
+        <div class="col-6 col-md-4 col-lg-3 text-left">
+          <h5 class="text-braves-red"><strong>Warren Spahn</strong></h5>
+          <div class="position-relative">
+            <img src="images/joeadcock.jpg" alt="Warren" class="img-fluid rounded">
+            <span class="year-badge"><strong>1999</strong></span>
           </div>
         </div>
   
-        <!-- Add the rest like Leo Mazzone, Joe Torre, Terry Pendleton... -->
       </div>
     </div>
   </section>
