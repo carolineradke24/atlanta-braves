@@ -104,6 +104,40 @@ body {
   left: 20px;
   z-index: 3;
 }
+@media (max-width: 5000px) {
+  .player-rotation-wrapper {
+    left: 10%;
+    width: 100vw; /* reduce width */
+    transform: none; /* cancel previous centering */
+  }
+
+  .player-rotation img.player-cutout {
+    width: 100%;
+    height: auto;
+  }
+  .player-rotation img[alt="Austin Riley"] {
+    max-height: 70vh;
+    width: 60%; /* or adjust as needed */
+    object-fit: contain;
+    left: 15%
+  }
+  .player-rotation img[alt="Acuna Jr."] {
+    object-fit: contain;
+    left: 5%
+  }
+  .player-rotation img[alt="Olson"] {
+    object-fit: contain;
+    left: 15%
+  }
+  .player-rotation img[alt="Ozuna"] {
+    object-fit: contain;
+    left: 5%
+  }
+  .player-rotation img[alt="Strider"] {
+    object-fit: contain;
+    left: 5%
+  }
+}
 .braves-logo {
   height: 150px;
   width: auto;
