@@ -80,46 +80,7 @@ body {
   color: #CE1141 !important;
 }
 
-.flip-box {
-  background-color: transparent;
-  width: 100%;
-  height: 150px;
-  perspective: 1000px;
-}
 
-.flip-box-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.flip-box:hover .flip-box-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-box-front, .flip-box-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 0.5rem;
-  backface-visibility: hidden;
-  padding: 1rem;
-}
-
-.flip-box-front {
-  background-color: #CE1141;
-  color: white;
-}
-
-.flip-box-back {
-  background-color: #ffffff;
-  color: #000;
-  transform: rotateY(180deg);
-  border: 1px solid #dee2e6;
-}
   </style>
 </head>
 <body class="bg-light">
@@ -254,52 +215,10 @@ body {
         <a href="https://mktg.mlbstatic.com/braves/documents/y2023/atlanta_braves_public_transportation_map.pdf" target="_blank" class="btn btn-outline-danger">Download MARTA Map (.pdf)</a>
       </div>
   
-      <!-- Memes & Internet -->
       <div class="category-card mb-4 p-4 rounded shadow">
         <h4 class="fw-bold mb-3">Rideshare</h4>
         <p>There is one rideshare zone that services Truist Park and The Battery Atlanta. The rideshare zone is located along Windy Ridge and allows easy pick-up and drop-off access.</p>
         <p><strong>Rideshare Pick Up/Drop Off: Either side of Windy Ridge Pkwy</strong></p>
-      </div>
-  
-      <!-- Celebrities & Fashion -->
-      <div class="category-card mb-4 p-4 rounded shadow">
-        <h4 class="fw-bold mb-3">🌟 Fashion & Celebrity Fans</h4>
-      <div style="height: 6px; width: 350px; background-color: #CE1141; margin-bottom: 12px;"></div>
-      <ul class="text-dark">
-        <li><strong>Kanye West, Drake, Rihanna, Jay-Z</strong> – All spotted wearing the iconic “A” cap, often a vintage or throwback navy-and-red style.</li>
-        <li><strong>Donald Glover (Childish Gambino)</strong> – Reps the Braves often, tying his ATL roots into interviews and performances.</li>
-        <li><strong>Zendaya & Tom Holland</strong> – Went viral attending a Braves game during the <em>Spider-Man: No Way Home</em> tour.</li>
-      </ul>
-      </div>
-    </div>
-
-
-
-          <div class="col-md-3">
-            <div class="flip-box">
-              <div class="flip-box-inner">
-                <div class="flip-box-front d-flex justify-content-center align-items-center bg-danger text-white fw-bold">Public Transportation</div>
-                <div class="flip-box-back p-3 text-dark bg-white">CobbLinc, MARTA and shuttle options are available with drop-offs near the stadium.</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="flip-box">
-              <div class="flip-box-inner">
-                <div class="flip-box-front d-flex justify-content-center align-items-center bg-danger text-white fw-bold">Rideshare</div>
-                <div class="flip-box-back p-3 text-dark bg-white">Rideshare services drop off and pick up in the designated Uber Zone near Windy Ridge Pkwy.</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="flip-box">
-              <div class="flip-box-inner">
-                <div class="flip-box-front d-flex justify-content-center align-items-center bg-danger text-white fw-bold">Parking Codes of Conduct</div>
-                <div class="flip-box-back p-3 text-dark bg-white">Tailgating rules apply; loud music, open flames, and glass containers are restricted.</div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
   
       <!-- Seating Chart -->
