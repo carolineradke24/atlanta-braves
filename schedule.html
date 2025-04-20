@@ -2751,6 +2751,13 @@ body {
     gameCards.forEach(card => {
       const gameDateStr = card.getAttribute('data-game-date');
       const gameDate = new Date(gameDateStr);
+
+      const gameEnd = new Date(gameDate.getTime() + 3 * 60 * 60 * 1000);
+      if (now >= gameDate && now <= gameEnd) {
+        nextGame = gameDate;
+        return;
+      }
+
       if (gameDate > now && (!nextGame || gameDate < nextGame)) {
         nextGame = gameDate;
       }
@@ -2760,30 +2767,42 @@ body {
   }
 
   function updateCountdown() {
-    const countdownElement = document.getElementById("nextGameCountdown");
-    const nextGameDate = getNextGameDate();
+  const countdownElement = document.getElementById("nextGameCountdown");
+  const gameCards = document.querySelectorAll('.game-card');
+  const now = new Date(); // only declared once here
 
-    if (!nextGameDate) {
-      countdownElement.innerHTML = "No upcoming games!";
+  let nextGame = null;
+
+  for (const card of gameCards) {
+    const gameDate = new Date(card.getAttribute('data-game-date'));
+    const gameEnd = new Date(gameDate.getTime() + 3 * 60 * 60 * 1000); // 3-hour buffer
+
+    if (now >= gameDate && now <= gameEnd) {
+      countdownElement.innerHTML = `Playing now! – Game started at ${gameDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
       return;
     }
 
-    const now = new Date();
-    const diff = nextGameDate - now;
-
-    if (diff <= 0) {
-      countdownElement.innerHTML = "Game time!";
-      return;
+    if (gameDate > now && (!nextGame || gameDate < nextGame)) {
+      nextGame = gameDate;
     }
-
-    const hours = Math.floor(diff / 1000 / 60 / 60);
-    const minutes = Math.floor((diff / 1000 / 60) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
-
-    countdownElement.innerHTML = `Next Game: ${nextGameDate.toLocaleString(undefined, {
-      weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
-    })} – Starts in ${hours}h ${minutes}m ${seconds}s`;
   }
+
+  if (!nextGame) {
+    countdownElement.innerHTML = "No upcoming games!";
+    return;
+  }
+
+  // Only calculate diff AFTER we've confirmed nextGame exists
+  const diff = nextGame - now;
+
+  const hours = Math.floor(diff / 1000 / 60 / 60);
+  const minutes = Math.floor((diff / 1000 / 60) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  countdownElement.innerHTML = `Next Game: ${nextGame.toLocaleString(undefined, {
+    weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit'
+  })} – Starts in ${hours}h ${minutes}m ${seconds}s`;
+}
 
   // Update every second
   setInterval(updateCountdown, 1000);
@@ -2838,43 +2857,60 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.game-card');
-  const now = new Date();
-  let nextGame = null;
-
-  cards.forEach(card => {
-    const gameDate = new Date(card.dataset.gameDate);
-    if (gameDate > now && (!nextGame || gameDate < new Date(nextGame.dataset.gameDate))) {
-      nextGame = card;
-    }
-  });
-
-  if (nextGame) {
-    const opponent = nextGame.dataset.opponent || 'TBD';
-    const homeaway = nextGame.dataset.homeaway;
-    const gameDate = new Date(nextGame.dataset.gameDate);
-    
-    const options = { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
-    const formattedDate = gameDate.toLocaleString('en-US', options);
-    
-    const locationText = homeaway === 'Home' 
-      ? `vs. ${opponent} (Home)`
-      : `@ ${opponent}`;
-    
-    const nextGameText = `Next Game: ${formattedDate} – ${locationText}`;
-
+  function updateMapAndText() {
+    const cards = document.querySelectorAll('.game-card');
+    const now = new Date();
+    let nextGameCard = null;
+    let nextGameDate = null;
+  
+    cards.forEach(card => {
+      const gameDate = new Date(card.dataset.gameDate);
+      const gameEnd = new Date(gameDate.getTime() + 3 * 60 * 60 * 1000);
+      if ((gameDate > now || (now >= gameDate && now <= gameEnd)) &&
+          (!nextGameCard || gameDate < new Date(nextGameCard.dataset.gameDate))) {
+        nextGameCard = card;
+        nextGameDate = gameDate;
+      }
+    });
+  
     const textElement = document.getElementById('next-game-text');
-    if (textElement) {
-      textElement.textContent = nextGameText;
+    const mapImage = document.getElementById('team-map');
+  
+    if (!nextGameCard || !textElement || !mapImage) return;
+  
+    const opponent = nextGameCard.dataset.opponent || 'TBD';
+    const homeaway = nextGameCard.dataset.homeaway;
+    const gameStart = nextGameDate;
+    const gameEnd = new Date(gameStart.getTime() + 3 * 60 * 60 * 1000);
+  
+    if (now >= gameStart && now <= gameEnd) {
+      const startTime = gameStart.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+      textElement.textContent = `Playing now – Game started at ${startTime}`;
     } else {
-      console.warn('Could not find #next-game-text element.');
+      const formattedDate = gameStart.toLocaleString('en-US', {
+        weekday: 'short', month: 'short', day: 'numeric',
+        hour: 'numeric', minute: '2-digit'
+      });
+  
+      const locationText = homeaway === 'Home'
+        ? `vs. ${opponent} (Home)`
+        : `@ ${opponent}`;
+  
+      textElement.textContent = `Next Game: ${formattedDate} – ${locationText}`;
+  
+      if (now < gameStart || now > gameEnd) {
+        if (homeaway === 'Home') {
+          mapImage.src = 'images/USmap-braves.png';
+        } else {
+          mapImage.src = `images/USmap-${opponent.toLowerCase()}.png`;
+        }
+      }
     }
-  } else {
-    console.log("No upcoming game found.");
   }
-});
-</script>
+  
+  updateMapAndText();
+  setInterval(updateMapAndText, 1000);
+  </script>
 
 </body>
 </html>
