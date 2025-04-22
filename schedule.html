@@ -2830,31 +2830,40 @@ body {
 </script>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const cards = document.querySelectorAll('.game-card');
-  const now = new Date();
-  let nextGame = null;
-
-  cards.forEach(card => {
-    const gameDate = new Date(card.dataset.gameDate);
-    if (gameDate > now && (!nextGame || gameDate < new Date(nextGame.dataset.gameDate))) {
-      nextGame = card;
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.game-card');
+    const now = new Date();
+    let nextGame = null;
+    let currentGame = null;
+  
+    cards.forEach(card => {
+      const gameDate = new Date(card.dataset.gameDate);
+      const threeHoursLater = new Date(gameDate.getTime() + 3 * 60 * 60 * 1000);
+      
+      if (gameDate <= now && now < threeHoursLater) {
+        currentGame = card;
+      }
+  
+      if (gameDate > now && (!nextGame || gameDate < new Date(nextGame.dataset.gameDate))) {
+        nextGame = card;
+      }
+    });
+  
+    const gameToShow = currentGame || nextGame;
+  
+    if (gameToShow) {
+      const homeaway = gameToShow.dataset.homeaway;
+      const opponent = gameToShow.dataset.opponent.toLowerCase(); // normalize for filename
+      const mapImage = document.getElementById('team-map');
+  
+      if (homeaway === 'Home') {
+        mapImage.src = 'images/USmap-braves.png'; // show home map
+      } else {
+        mapImage.src = `images/USmap-${opponent}.png`; // away map
+      }
     }
   });
-
-  if (nextGame) {
-    const homeaway = nextGame.dataset.homeaway;
-    const opponent = nextGame.dataset.opponent.toLowerCase(); // normalize for filename
-    const mapImage = document.getElementById('team-map');
-
-    if (homeaway === 'Home') {
-      mapImage.src = 'images/USmap-braves.png'; // show home map
-    } else {
-      mapImage.src = `images/USmap-${opponent}.png`; // away map
-    }
-  }
-});
-</script>
+  </script>
 
 <script>
   function updateMapAndText() {
