@@ -154,10 +154,24 @@ body {
 .img5 { top: 40px; left: 300px; transform: rotate(-3deg); }
 .img6 { top: 120px; left: 370px; transform: rotate(7deg); }
 .img7 { top: 210px; left: 290px; transform: rotate(-6deg); }
+
 @media (max-width: 768px) {
   .collage-container {
-    width: 100%;     /* Full width on smaller screens */
-    margin-top: 1rem;
+    width: 100%;
+    transform: scale(0.7);
+    transform-origin: top center;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .collage-container > .pet-img {
+    position: absolute;
+  }
+
+  .pet-img {
+    width: 120px;
+    height: 120px;
   }
 }
 .snitbear-img {
