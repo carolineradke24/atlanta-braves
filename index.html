@@ -11,18 +11,18 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     :root {
-      --bs-primary: #CE1141; /* Braves Red */
-      --bs-secondary: #13274F; /* Braves Navy */
+      --bs-primary: #CE1141; 
+      --bs-secondary: #13274F; 
     }
 .custom-navbar {
-  background-color: #13274F; /* Braves navy blue */
-  height: 60px; /* Makes the bar thinner */
+  background-color: #13274F; 
+  height: 60px;
 }
 body {
-  padding-top: 60px; /* match the height of your navbar */
+  padding-top: 60px; 
 }
 .braves-country-logo {
-  height: 35px; /* Adjust size as needed */
+  height: 35px; 
   width: auto;
 }
 .navbar-toggler {
@@ -52,7 +52,7 @@ body {
     top: 100%;
     right: 0;
     width: 150px;
-    background-color: #13274F !important; /* Braves Navy */
+    background-color: #13274F !important; 
     padding: 1rem;
     border-radius: 0 0 10px 10px;
   }
@@ -63,7 +63,7 @@ body {
   }
 
   .navbar-nav .nav-link.active {
-    color: #ffffff !important; /* Braves Red for active */
+    color: #ffffff !important; 
   }
 }
 .hero-img {
@@ -75,12 +75,12 @@ body {
   height: 700px;
   position: relative;
   overflow: hidden;
-  width: 100%; /* responsive full-width */
+  width: 100%; 
 }
 .player-rotation-wrapper {
   position: absolute;
   bottom: 0;
-  right: 45%; /* adjust as needed */
+  right: 45%; 
   height: 100%;
   width: auto;
   z-index: 2;
@@ -107,8 +107,8 @@ body {
 @media (max-width: 5000px) {
   .player-rotation-wrapper {
     left: 10%;
-    width: 100vw; /* reduce width */
-    transform: none; /* cancel previous centering */
+    width: 100vw; 
+    transform: none; 
   }
 
   .player-rotation img.player-cutout {
@@ -117,7 +117,7 @@ body {
   }
   .player-rotation img[alt="Austin Riley"] {
     max-height: 70vh;
-    width: 60%; /* or adjust as needed */
+    width: 60%; 
     object-fit: contain;
     left: 15%
   }
@@ -144,9 +144,9 @@ body {
   filter: drop-shadow(0 0 0 white) drop-shadow(2px 0 white) drop-shadow(-2px 0 white) drop-shadow(0 2px white) drop-shadow(0 -2px white);
 }
 .welcome-banner {
-  background-color: #13274F;  /* Braves navy */
+  background-color: #13274F;  
   padding: 12px 0;
-  margin-top: -5px; /* removes gap if needed */
+  margin-top: -5px; 
 }
 .welcome-text {
   color: white;
@@ -173,7 +173,7 @@ body {
   color: #13274F;
 }
 .fan-quotes-section {
-  background-color: #13274F; /* Braves navy */
+  background-color: #13274F; 
   color: white;
 }
 
@@ -185,12 +185,12 @@ body {
 }
 
 .carousel-indicators {
-  bottom: -40px; /* Moves them further below the carousel */
+  bottom: -40px; 
 }
 
 #fanQuotesCarousel {
-  position: relative; /* Needed for the dots to respect positioning */
-  padding-bottom: 20px; /* Adds space for the dots */
+  position: relative; 
+  padding-bottom: 20px; 
 }
 
 .quotes-divider {
@@ -236,7 +236,7 @@ body {
   pointer-events: auto;
 }
 .scroll-to-top:hover {
-  color: #CE1141; /* Braves red stays on hover */
+  color: #CE1141; 
 }
   </style>
 </head>
@@ -314,7 +314,7 @@ body {
       <!-- Carousel -->
       <div id="fanQuotesCarousel" class="carousel slide" data-bs-ride="carousel">
         
-        <!-- Dots/Indicators -->
+        <!-- Indicators -->
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#fanQuotesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Quote 1"></button>
           <button type="button" data-bs-target="#fanQuotesCarousel" data-bs-slide-to="1" aria-label="Quote 2"></button>
@@ -405,7 +405,7 @@ body {
       cutouts[index].classList.remove('active');
       index = (index + 1) % cutouts.length;
       cutouts[index].classList.add('active');
-    }, 4000); // 4 seconds per rotation
+    }, 4000); 
   </script>
 
   <script>
@@ -427,3 +427,32 @@ body {
   
 </body>
 </html>
+
+
+<!-- I used the following links to inform myself and get insipiration.
+ https://www.access-programmers.co.uk/forums/threads/how-do-i-position-one-image-on-top-of-another-in-html.325979/
+ https://carpentry.library.ucsb.edu/2022-01-28-ucsb-webpub-online/07-layouts/
+ https://www.mwsug.org/proceedings/2012/S1/MWSUG-2012-S122.pdf
+ https://css-tricks.com/centering-css-complete-guide/#flexbox
+ https://learn.shayhowe.com/html-css/opening-the-box-model/
+ https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo
+ https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript
+ https://developer.mozilla.org/en-US/docs/Web/CSS
+ https://developer.mozilla.org/en-US/docs/Web/HTML
+ https://www.mlb.com/braves
+ https://www.espn.com/mlb/team/_/name/atl/atlanta-braves
+ https://web.dev/learn/css/spacing
+ https://web.dev/articles/intersectionobserver
+ https://getbootstrap.com/docs/5.3/components/carousel/
+ https://getbootstrap.com/docs/5.3/components/navbar/
+ https://getbootstrap.com/docs/5.3/utilities/spacing/
+ https://www.youtube.com/watch?v=GKLLkwTPdVE&ab_channel=UnitK
+ https://www.youtube.com/watch?v=akXfF066MY0&ab_channel=HaydnCo
+ https://www.youtube.com/watch?v=x4u1yp3Msao&ab_channel=KevinPowell
+ https://www.youtube.com/watch?v=lf9NVbcTV88&ab_channel=OnlineITtutsTutorials
+ https://www.youtube.com/watch?v=MaRmAmFI3Sc&ab_channel=WinterwindInc.
+ https://www.w3schools.com/tags/tag_footer.asp
+ https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+ https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
+-->

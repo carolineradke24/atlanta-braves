@@ -11,18 +11,18 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     :root {
-      --bs-primary: #CE1141; /* Braves Red */
-      --bs-secondary: #13274F; /* Braves Navy */
+      --bs-primary: #CE1141; 
+      --bs-secondary: #13274F; 
     }
 .custom-navbar {
-  background-color: #13274F; /* Braves navy blue */
-  height: 60px; /* Makes the bar thinner */
+  background-color: #13274F; 
+  height: 60px; 
 }
 body {
-  padding-top: 60px; /* match the height of your navbar */
+  padding-top: 60px; 
 }
 .braves-country-logo {
-  height: 35px; /* Adjust size as needed */
+  height: 35px; 
   width: auto;
 }
 .navbar-toggler {
@@ -52,7 +52,7 @@ body {
     top: 100%;
     right: 0;
     width: 150px;
-    background-color: #13274F !important; /* Braves Navy */
+    background-color: #13274F !important; 
     padding: 1rem;
     border-radius: 0 0 10px 10px;
   }
@@ -63,7 +63,7 @@ body {
   }
 
   .navbar-nav .nav-link.active {
-    color: #ffffff !important; /* Braves Red for active */
+    color: #ffffff !important; 
   }
 }
 .footer {
@@ -97,7 +97,7 @@ body {
   text-decoration: none;
 }
 
-/* Twitter - Black outline */
+
 .share-btn.twitter {
   border-color: #000;
   color: #000;
@@ -108,7 +108,7 @@ body {
   color: #fff;
 }
 
-/* Facebook - Blue outline */
+
 .share-btn.facebook {
   border-color: #3b5998;
   color: #3b5998;
@@ -119,7 +119,7 @@ body {
   color: #fff;
 }
 
-/* WhatsApp - Green outline */
+
 .share-btn.whatsapp {
   border-color: #25D366;
   color: #25D366;
@@ -130,7 +130,7 @@ body {
   color: #fff;
 }
 .btn-outline-imessage {
-  color: #007aff; /* iMessage blue */
+  color: #007aff; 
   border: 2px solid #007aff;
   background-color: white;
   transition: all 0.3s ease;
@@ -182,7 +182,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap; /* for small screens */
+  flex-wrap: wrap; 
 }
 
 .tomahawk-img {
@@ -203,7 +203,7 @@ body {
   min-height: 10rem;
 }
 
-/* Responsive tweaks */
+
 @media (max-width: 768px) {
   .fact-container {
     flex-direction: column;
@@ -236,7 +236,7 @@ body {
   pointer-events: auto;
 }
 .scroll-to-top:hover {
-  color: #CE1141; /* Braves red stays on hover */
+  color: #CE1141; 
 }
   </style>
 </head>
@@ -514,21 +514,21 @@ document.getElementById("shareBtn").href =
   `sms:&body=${encodeURIComponent(`I got ${profile.name} on the Braves Player Quiz! #ForTheA ${quizURL}`)}`;
 
   document.getElementById("restartBtn").addEventListener("click", () => {
-  // Reset state
+  
   currentQuestion = 0;
   results = {};
 
-  // Show quiz again
+  
   document.querySelector(".quiz-card").classList.remove("d-none");
   resultCard.classList.add("d-none");
 
   loadQuestion();
 });
-      // Optional animation
+      
       resultCard.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 600, fill: 'forwards' });
     }
   
-    // Initialize
+    
     loadQuestion();
   </script>
 
@@ -536,8 +536,7 @@ document.getElementById("shareBtn").href =
   document.getElementById("submissionForm").addEventListener("submit", function(e) {
     e.preventDefault();
 
-    // Normally, you’d send this to your backend or service (Formspree, Google Apps Script, etc.)
-    // Simulate submission confirmation
+    
     document.getElementById("submissionMessage").style.display = "block";
     this.reset();
   });
@@ -548,7 +547,7 @@ document.getElementById("shareBtn").href =
 <script>
   window.addEventListener('load', () => {
     const track = document.querySelector('.carousel-track');
-    const totalWidth = track.scrollWidth / 2; // Width of one image set
+    const totalWidth = track.scrollWidth / 2; 
     track.style.animation = `scroll-left 60s linear infinite`;
 
     const styleSheet = document.createElement('style');

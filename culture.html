@@ -11,18 +11,18 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     :root {
-      --bs-primary: #CE1141; /* Braves Red */
-      --bs-secondary: #13274F; /* Braves Navy */
+      --bs-primary: #CE1141; 
+      --bs-secondary: #13274F; 
     }
 .custom-navbar {
-  background-color: #13274F; /* Braves navy blue */
-  height: 60px; /* Makes the bar thinner */
+  background-color: #13274F; 
+  height: 60px; 
 }
 body {
-  padding-top: 60px; /* match the height of your navbar */
+  padding-top: 60px; 
 }
 .braves-country-logo {
-  height: 35px; /* Adjust size as needed */
+  height: 35px; 
   width: auto;
 }
 .navbar-toggler {
@@ -52,7 +52,7 @@ body {
     top: 100%;
     right: 0;
     width: 150px;
-    background-color: #13274F !important; /* Braves Navy */
+    background-color: #13274F !important; 
     padding: 1rem;
     border-radius: 0 0 10px 10px;
   }
@@ -63,7 +63,7 @@ body {
   }
 
   .navbar-nav .nav-link.active {
-    color: #ffffff !important; /* Braves Red for active */
+    color: #ffffff !important; 
   }
 }
 .footer {
@@ -107,7 +107,7 @@ body {
   object-fit: cover;
 }
 .braves-pop-culture-section {
-  background-color: #13274F; /* Braves Navy */
+  background-color: #13274F;
 }
 .category-card {
   background-color: #ffffff;
@@ -140,13 +140,13 @@ body {
   transition: transform 0.3s ease, z-index 0.3s ease;
 }
 
-/* Hover effect */
+
 .pet-img:hover {
   transform: scale(1.4) rotate(0deg);
   z-index: 10;
 }
 
-/* Spaced-out layout */
+
 .img1 { top: 0; left: 0px; transform: rotate(-4deg); }
 .img2 { top: 0; left: 230px; transform: rotate(8deg); }
 .img3 { top: 30px; left: 120px; transform: rotate(2deg); }
@@ -175,26 +175,26 @@ body {
 }
 .snitbear-img {
   max-width: 100%;
-  width: 700px;     /* Or however big you want it on desktop */
+  width: 700px;     
   height: auto;
 }
 
 @media (max-width: 768px) {
   .snitbear-img {
-    width: 100%;     /* Full width on smaller screens */
+    width: 100%;     
     margin-top: 1rem;
   }
 }
 
 .ozziefoundation-img {
   max-width: 100%;
-  width: 700px;     /* Or however big you want it on desktop */
+  width: 700px;     
   height: auto;
 }
 
 @media (max-width: 768px) {
   .ozziefoundation-img {
-    width: 100%;     /* Full width on smaller screens */
+    width: 100%;     
     margin-top: 1rem;
   }
 }
@@ -215,7 +215,7 @@ body {
   pointer-events: auto;
 }
 .scroll-to-top:hover {
-  color: #CE1141; /* Braves red stays on hover */
+  color: #CE1141; 
 }
   </style>
 </head>
@@ -499,7 +499,7 @@ body {
   <script>
     window.addEventListener('load', () => {
       const track = document.querySelector('.carousel-track');
-      const totalWidth = track.scrollWidth / 2; // Width of one image set
+      const totalWidth = track.scrollWidth / 2; 
       track.style.animation = `scroll-left 60s linear infinite`;
   
       const styleSheet = document.createElement('style');
